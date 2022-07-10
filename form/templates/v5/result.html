@@ -1,0 +1,16 @@
+{% extends "v5/base.html" %}
+
+{% block result %}
+    <p>
+        입력 결과는 아래와 같습니다.
+    </p>
+    <li>입력단어 : {{ name }}</li>
+    <li>변경단어 : {{ api_result }}</li>
+    <li>설명 : {{ dic2_result }}</li>
+    <p>
+        <a href="{{ dic_result }}">음원듣기</a>
+    </p>
+    <p>
+        <a href="{% url 'v5:index' %}">돌아가기</a>
+    </p>
+{% endblock result %}

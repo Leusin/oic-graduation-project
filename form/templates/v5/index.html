@@ -1,0 +1,19 @@
+{% extends "v5/base.html" %}
+
+{% block question %}
+    <p>
+        정보를 입력해 보세요!
+    </p>
+    <form action="{% url 'v5:result' %}" method="post" action="{% url 'v5:result' %}">
+        {% csrf_token %}
+        <p>
+            <label for="name">입력단어: </label>
+            <input id="name" type="text" name="name" value="{{name}}"/>
+        </p>
+        <!--<p>
+            <label for="hobby">취미: </label>
+            <input id="hobby" type="text" name="hobby">
+        </p>-->
+        <input type="submit" value="OK">
+    </form>
+{% endblock question %}

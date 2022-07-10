@@ -1,0 +1,6 @@
+<h1> landing </h1>
+<form method="post">
+    {% csrf_token %}
+    <div> {{ form.content }}</div>
+    <button type="submit"> save </button>
+</form>
