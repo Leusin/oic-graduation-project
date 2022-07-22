@@ -1,15 +1,21 @@
 <resources>
     <string name="app_name">OIC</string>
+
+    <string name="title_login">로그인</string>
+    <string name="title_join">회원가입</string>
     <string name="title_search">검색</string>
     <string name="title_note">단어장</string>
     <string name="title_account">내계정</string>
-    <string name="title_activity_login">LoginActivity</string>
-    <string name="prompt_email">Email</string>
-    <string name="prompt_password">Password</string>
-    <string name="action_sign_in">Sign in or register</string>
-    <string name="action_sign_in_short">Sign in</string>
-    <string name="welcome">"Welcome !"</string>
-    <string name="invalid_username">Not a valid username</string>
-    <string name="invalid_password">Password must be >5 characters</string>
-    <string name="login_failed">"Login failed"</string>
+
+    <string name="email">이메일</string>
+    <string name="password">비밀번호</string>
+
+    <string name="prompt_email">이메일 주소를 입력해 주세요</string>
+    <string name="prompt_password">비밀번호를 입력해주세요</string>
+    <string name="action_login">로그인</string>
+    <string name="action_sign_in">회원가입하기</string>
+    <string name="join_in">OIC 가 처음이신가요?</string>
+    <string name="join_in_talk">카카오톡으로 로그인</string>
+    <string name="join_in_google">구글 계정으로 로그인</string>
+
 </resources>

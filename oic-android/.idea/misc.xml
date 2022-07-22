@@ -9,11 +9,23 @@
         <entry key="..\:/Documents/oic-graduation-project/oic-android/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.215" />
         <entry key="..\:/Documents/oic-graduation-project/oic-android/app/src/main/res/drawable/ic_launcher_background.xml" value="0.215" />
         <entry key="..\:/Documents/oic-graduation-project/oic-android/app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.215" />
-        <entry key="..\:/Documents/oic-graduation-project/oic-android/app/src/main/res/layout/activity_login.xml" value="0.358695652173913" />
-        <entry key="..\:/Documents/oic-graduation-project/oic-android/app/src/main/res/layout/activity_main.xml" value="0.358695652173913" />
+        <entry key="..\:/Documents/oic-graduation-project/oic-android/app/src/main/res/drawable/shape_radius_24.xml" value="0.215" />
+        <entry key="..\:/Documents/oic-graduation-project/oic-android/app/src/main/res/drawable/shape_radius_8.xml" value="0.215" />
+        <entry key="..\:/Documents/oic-graduation-project/oic-android/app/src/main/res/font/notosans_kr.xml" value="0.2578125" />
+        <entry key="..\:/Documents/oic-graduation-project/oic-android/app/src/main/res/layout-w1240dp/activity_login.xml" value="0.2352744310575636" />
+        <entry key="..\:/Documents/oic-graduation-project/oic-android/app/src/main/res/layout-w936dp/activity_login.xml" value="0.27049180327868855" />
+        <entry key="..\:/Documents/oic-graduation-project/oic-android/app/src/main/res/layout/activity_login.xml" value="0.4746600741656366" />
+        <entry key="..\:/Documents/oic-graduation-project/oic-android/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Documents/oic-graduation-project/oic-android/app/src/main/res/layout/activity_sign_in.xml" value="0.358695652173913" />
+        <entry key="..\:/Documents/oic-graduation-project/oic-android/app/src/main/res/layout/activity_splash.xml" value="0.11119554204660588" />
+        <entry key="..\:/Documents/oic-graduation-project/oic-android/app/src/main/res/layout/drawable_let_image_customise.xml" value="0.358695652173913" />
+        <entry key="..\:/Documents/oic-graduation-project/oic-android/app/src/main/res/layout/fragment_account.xml" value="0.358695652173913" />
         <entry key="..\:/Documents/oic-graduation-project/oic-android/app/src/main/res/layout/fragment_dashboard.xml" value="0.358695652173913" />
         <entry key="..\:/Documents/oic-graduation-project/oic-android/app/src/main/res/layout/fragment_home.xml" value="0.358695652173913" />
+        <entry key="..\:/Documents/oic-graduation-project/oic-android/app/src/main/res/layout/fragment_login.xml" value="0.2140625" />
         <entry key="..\:/Documents/oic-graduation-project/oic-android/app/src/main/res/layout/fragment_notifications.xml" value="0.358695652173913" />
+        <entry key="..\:/Documents/oic-graduation-project/oic-android/app/src/main/res/layout/splash.xml" value="0.1" />
+        <entry key="..\:/Documents/oic-graduation-project/oic-android/app/src/main/res/layout/toolbar.xml" value="0.22760416666666666" />
         <entry key="..\:/Documents/oic-graduation-project/oic-android/app/src/main/res/menu/bottom_nav_menu.xml" value="0.36614583333333334" />
         <entry key="..\:/Documents/oic-graduation-project/oic-android/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
         <entry key="..\:/Documents/oic-graduation-project/oic-android/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1955" />
@@ -25,5 +37,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.22" />
+      </ProjectState>
+    </option>
   </component>
 </project>
