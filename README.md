@@ -78,21 +78,10 @@ dependencies {
     implementation 'com.google.firebase:firebase-bom:30.3.0'
     implementation 'com.google.android.gms:play-services-auth:20.2.0'
     implementation 'com.google.firebase:firebase-auth-ktx:21.0.6'
+    apply plugin: 'com.google.gms.google-services'
     //Multidex
     implementation 'androidx.multidex:multidex:2.0.1'
 }
 ```
 MultiDex 는 앱을 빌드 할 때 "Cannot fit requested classes in a single dex file" 오류를 막기위함.
-
-```kotlin
-FirebaseAuthApplication.auth.signInWithEmailAndPassword(username.text.toString(), password.text.toString()).addOnCompleteListener(this) { task ->
-                username.text.clear(); password.text.clear()
-                if (task.isSuccessful) {
-                    if (FirebaseAuthApplication.checkAuth()) { FirebaseAuthApplication.email = username.text.toString(); ChangeVisibility("login")}
-                    else { Toast.makeText(baseContext, "전송된 메일로 이메일 인증이 되지 않았습니다.", Toast.LENGTH_SHORT).show() }
-                }
-                else {
-                    Toast.makeText(baseContext, "로그인 실패", Toast.LENGTH_SHORT).show()
-                }
-            }
-```
+`apply plugin: 'com.google.gms.google-services'` 가 있어야 파이어베이즈 인증 관련 오류가 없어짐

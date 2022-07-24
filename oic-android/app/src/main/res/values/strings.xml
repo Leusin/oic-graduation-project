@@ -17,5 +17,9 @@
     <string name="join_in">OIC 가 처음이신가요?</string>
     <string name="join_in_talk">카카오톡으로 로그인</string>
     <string name="join_in_google">구글 계정으로 로그인</string>
+    <string name="greet_text">반갑습니다!</string>
+    <string name="email_join">이메일 주소를 입력해주세요</string>
+    <string name="password_join">비밀번호를 입력해주세요</string>
+    <string name="action_joinin">회원가입 하기</string>
 
 </resources>

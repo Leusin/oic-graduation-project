@@ -20,8 +20,8 @@
         app:layout_constraintStart_toStartOf="parent" >
         <ImageView
             android:id="@+id/back_icon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
             android:src="@drawable/ic_baseline_arrow_back_24"
             android:layout_marginEnd="8dp"
             app:tint="@color/white"
@@ -169,5 +169,84 @@
         android:background="@drawable/shape_radius_24"
         app:layout_constraintTop_toBottomOf="@+id/login_talk"
         tools:layout_editor_absoluteX="36dp" />
+
+    <!-- 회원가입 페이지 -->
+
+    <TextView
+        android:id="@+id/greet"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="36dp"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:layout_marginRight="36dp"
+        android:layout_marginBottom="32dp"
+        android:paddingTop="24dp"
+        android:paddingBottom="24dp"
+        android:fontFamily="@font/notosans_kr_medium"
+        android:gravity="left"
+        android:text="@string/greet_text"
+        android:textColor="@color/purple_500"
+        android:textSize="28sp"
+        app:layout_constraintBottom_toTopOf="@+id/username_join"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="gone"/>
+
+    <EditText
+        android:id="@+id/username_join"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginRight="36dp"
+        android:background="@drawable/shape_radius_8"
+        android:backgroundTint="@color/white"
+        android:padding="12dp"
+        android:hint="@string/email_join"
+        android:inputType="textEmailAddress"
+        android:selectAllOnFocus="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/greet"
+        android:visibility="gone"/>
+
+    <EditText
+        android:id="@+id/password_join"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginRight="36dp"
+        android:background="@drawable/shape_radius_8"
+        android:backgroundTint="@color/white"
+        android:padding="12dp"
+        android:hint="@string/password_join"
+        android:imeOptions="actionDone"
+        android:inputType="textPassword"
+        android:selectAllOnFocus="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/username_join"
+        android:visibility="gone"/>
+
+    <Button
+        android:id="@+id/action_join_in"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_gravity="start"
+        android:layout_marginLeft="36dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginRight="36dp"
+        android:background="@drawable/shape_radius_8"
+        android:backgroundTint="@color/purple_500"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:text="@string/action_joinin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/password_join"
+        android:visibility="gone"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
