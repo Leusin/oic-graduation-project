@@ -23,7 +23,7 @@ class NoteFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         val dashboardViewModel =
-            ViewModelProvider(this).get(AccountViewModel::class.java)
+            ViewModelProvider(this).get(NoteViewModel::class.java)
 
         _binding = FragmentNoteBinding.inflate(inflater, container, false)
         val root: View = binding.root

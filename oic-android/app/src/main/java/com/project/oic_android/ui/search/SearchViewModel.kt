@@ -1,4 +1,4 @@
-package com.project.oic_android.ui.Search
+package com.project.oic_android.ui.search
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

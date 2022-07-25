@@ -1,4 +1,4 @@
-package com.project.oic_android.ui.note
+package com.project.oic_android.ui.account
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

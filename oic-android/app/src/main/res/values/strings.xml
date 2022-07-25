@@ -1,25 +1,31 @@
 <resources>
     <string name="app_name">OIC</string>
 
-    <string name="title_login">로그인</string>
-    <string name="title_join">회원가입</string>
-    <string name="title_search">검색</string>
-    <string name="title_note">단어장</string>
-    <string name="title_account">내계정</string>
+<!--
+    <string name="default_web_client_id" translatable="false">924806410873-h6p3e9gm2a6neo7kcqgtam73dl88pkdu.apps.googleusercontent.com</string>
+-->
 
+    <!-- 카카오톡 -->
+    <string name="kakao_app_key">asdfasdf</string>
+
+    <!-- 로그인-->
+    <string name="title_login">로그인</string>
     <string name="email">이메일</string>
     <string name="password">비밀번호</string>
-
-    <string name="prompt_email">이메일 주소를 입력해 주세요</string>
-    <string name="prompt_password">비밀번호를 입력해주세요</string>
     <string name="action_login">로그인</string>
-    <string name="action_sign_in">회원가입하기</string>
     <string name="join_in">OIC 가 처음이신가요?</string>
     <string name="join_in_talk">카카오톡으로 로그인</string>
     <string name="join_in_google">구글 계정으로 로그인</string>
+
+    <!-- 회원가입 -->
+    <string name="title_join">회원가입</string>
     <string name="greet_text">반갑습니다!</string>
     <string name="email_join">이메일 주소를 입력해주세요</string>
     <string name="password_join">비밀번호를 입력해주세요</string>
     <string name="action_joinin">회원가입 하기</string>
 
+    <!-- 앱바 네비게이션 -->
+    <string name="title_search">검색</string>
+    <string name="title_note">단어장</string>
+    <string name="title_account">내계정</string>
 </resources>

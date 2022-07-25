@@ -7,19 +7,19 @@
 
     <fragment
         android:id="@+id/navigation_search"
-        android:name="com.project.oic_android.ui.Search.SearchFragment"
+        android:name="com.project.oic_android.ui.search.SearchFragment"
         android:label="@string/title_search"
         tools:layout="@layout/fragment_search" />
 
     <fragment
         android:id="@+id/navigation_note"
-        android:name="com.project.oic_android.ui.note.AccountFragment"
+        android:name="com.project.oic_android.ui.note.NoteFragment"
         android:label="@string/title_note"
         tools:layout="@layout/fragment_note" />
 
     <fragment
         android:id="@+id/navigation_account"
-        android:name="com.project.oic_android.ui."
+        android:name="com.project.oic_android.ui.account.AccountFragment"
         android:label="@string/title_account"
         tools:layout="@layout/fragment_account" />
 
