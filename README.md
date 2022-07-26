@@ -154,6 +154,29 @@ https://www.youtube.com/watch?v=Chso6xrJ6aU&ab_channel=Stevdza-San
 > ~~문제: 프래그먼트가 전환되지 않음~~ <br>
 > `botton_nav_menu.xml` 과 `main_navigaion.xml` id 가 일치하지 않으면 프래그먼트가 연결되지 않음
 
+### 툴바 업데이트
+https://developer.android.com/reference/androidx/navigation/NavController#addOnDestinationChangedListener(androidx.navigation.NavController.OnDestinationChangedListener)
+https://stackoverflow.com/questions/52511136/how-to-set-title-in-app-bar-with-navigation-architecture-component
+https://youngest-programming.tistory.com/333
+
+```kotlin
+val navController = findNavController(R.id.nav_host_fragment_activity_main)
+
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            title = when (destination.id) {
+                R.id.navigation_search -> "oic"
+                else -> "Default title"
+            }
+
+            if (destination.id == navigation_search) { binding.toolbarTitle.text = "단어장"; binding.searchView.visibility = View.VISIBLE; binding.orderSet.visibility = View.GONE }
+            else if (destination.id == navigation_note) { binding.toolbarTitle.text = "단어장"; binding.searchView.visibility = View.GONE; binding.orderSet.visibility = View.VISIBLE}
+            else if (destination.id == navigation_account) {binding.toolbarTitle.text = "내계정"; binding.searchView.visibility = View.GONE; binding.orderSet.visibility = View.GONE}
+        }
+```
+
+프래그먼트의 목적지에 따라 툴바 UI 업데이트
+
+
 ### 검색 인터페이스
 https://developer.android.com/guide/topics/search/search-dialog?hl=ko
 https://salix97.tistory.com/231

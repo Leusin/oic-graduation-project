@@ -7,11 +7,14 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.appcompat.widget.Toolbar
+import androidx.navigation.NavController
 import androidx.navigation.NavDirections
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.google.android.gms.common.internal.AccountAccessor
+import com.project.oic_android.R.id.*
 import com.project.oic_android.databinding.ActivityMainBinding
 import com.project.oic_android.ui.account.AccountFragment
 import com.project.oic_android.ui.note.NoteFragment
@@ -39,26 +42,22 @@ class MainActivity : AppCompatActivity() {
 
         supportFragmentManager.beginTransaction()
 
-        navView.setOnItemSelectedListener { item ->
-            when (item.itemId) {
-                R.id.navigation_search -> { binding.toolbarTitle.text = "검색"}
-                R.id.navigation_note -> { binding.toolbarTitle.text = "단어장"}
-                R.id.navigation_account -> { binding.toolbarTitle.text = "내계정"}
-            }
-           true
-        }
+        // 프래그먼트에 따라 toolbar 구성요소 visibility 변화
+        initNavigationUI()
 
-        // UI 초기화
-        navView.apply {
-            setOnItemSelectedListener { item ->
-                val action: Unit = when (item.itemId) {
-                    R.id.navigation_search -> { binding.toolbarTitle.text = "검색"; binding.searchView.visibility = View.VISIBLE; binding.orderSet.visibility = View.GONE}
-                    R.id.navigation_note -> { binding.toolbarTitle.text = "단어장"; binding.searchView.visibility = View.GONE; binding.orderSet.visibility = View.VISIBLE}
-                    R.id.navigation_account -> { binding.toolbarTitle.text = "내계정"; binding.searchView.visibility = View.GONE; binding.orderSet.visibility = View.GONE}
-                    else -> return@setOnItemSelectedListener true
-                }
-                true
+    }
+    private fun initNavigationUI() {
+        val navController = findNavController(R.id.nav_host_fragment_activity_main)
+
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            title = when (destination.id) {
+                R.id.navigation_search -> "oic"
+                else -> "Default title"
             }
+
+            if (destination.id == navigation_search) { binding.toolbarTitle.text = "단어장"; binding.searchView.visibility = View.VISIBLE; binding.orderSet.visibility = View.GONE }
+            else if (destination.id == navigation_note) { binding.toolbarTitle.text = "단어장"; binding.searchView.visibility = View.GONE; binding.orderSet.visibility = View.VISIBLE}
+            else if (destination.id == navigation_account) {binding.toolbarTitle.text = "내계정"; binding.searchView.visibility = View.GONE; binding.orderSet.visibility = View.GONE}
         }
     }
 }
