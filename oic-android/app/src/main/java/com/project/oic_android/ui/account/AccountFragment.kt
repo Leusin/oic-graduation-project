@@ -1,5 +1,6 @@
 package com.project.oic_android.ui.account
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -13,8 +14,6 @@ class AccountFragment : Fragment() {
 
     private var _binding: FragmentAccountBinding? = null
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -22,14 +21,14 @@ class AccountFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val dashboardViewModel =
+        val accountViewModel =
             ViewModelProvider(this).get(AccountViewModel::class.java)
 
         _binding = FragmentAccountBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
         val textView: TextView = binding.textAccount
-        dashboardViewModel.text.observe(viewLifecycleOwner) {
+        accountViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
         return root

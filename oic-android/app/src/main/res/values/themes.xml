@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.App.OIC" parent="Theme.MaterialComponents.Light">
+    <style name="Theme.App.OIC" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/purple_500</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
@@ -21,7 +21,16 @@
     <!-- 툴바 설정-->
     <style name="Toolbar" parent="Theme.MaterialComponents.Light.NoActionBar">
         <item name="android:textColorPrimary">@android:color/white</item>
-        <item name="android:fontFamily">@font/notosans_kr_medium</item>
+        <!-- <item name="android:fontFamily">@font/notosans_kr_medium</item> -->
+    </style>
+    <!-- 검색 뷰 설정-->
+    <style name="SearchView" parent="Widget.AppCompat.SearchView" >
+        <!-- Query Text Color -->
+        <item name="android:textColorPrimary">#191919</item>
+        <!-- Hint Color -->
+        <item name="android:textColorHint">#707070</item>
+        <!-- Icon Color -->
+        <item name="android:tint">@color/purple_700</item>
     </style>
 
 </resources>

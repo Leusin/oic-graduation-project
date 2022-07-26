@@ -16,21 +16,23 @@
         android:elevation="4dp"
         android:paddingStart="24dp"
         android:theme="@style/Toolbar"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent" >
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
         <ImageView
             android:id="@+id/back_icon"
-            android:layout_width="28dp"
-            android:layout_height="28dp"
-            android:src="@drawable/ic_baseline_arrow_back_24"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_marginEnd="8dp"
+            android:src="@drawable/ic_baseline_arrow_back_24"
             app:tint="@color/white"
             android:visibility="gone"/>
+
         <TextView
             android:id="@+id/toolbar_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/title_login"
+            android:text="OIC"
             android:textColor="#FFFFFF"
             android:textSize="18sp"
             android:textStyle="bold"
@@ -161,7 +163,7 @@
         android:layout_height="48dp"
         android:layout_gravity="start"
         android:layout_marginLeft="36dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="16dp"
         android:layout_marginRight="36dp"
         android:text="@string/join_in_google"
         android:textSize="16sp"

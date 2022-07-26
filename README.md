@@ -143,11 +143,6 @@ https://stackoverflow.com/questions/40760625/how-to-check-permission-in-fragment
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="28" />
 ```
 
-액티비티에서의 권한 요청
-```kotlin
-ActivityCompat.requestPermissions(activity!!, REQUIRED_PERMISSIONS, REQUEST_CODE_PERMISSIONS)
-```
-
 프래그먼트의 경우 권한 요청
 ```kotlin
 requestPermissions(REQUIRED_PERMISSIONS, REQUEST_CODE_PERMISSIONS) 
@@ -155,4 +150,44 @@ requestPermissions(REQUIRED_PERMISSIONS, REQUEST_CODE_PERMISSIONS)
 
 ### 하단 네비게이션
 https://www.youtube.com/watch?v=Chso6xrJ6aU&ab_channel=Stevdza-San
-> 프래그먼트가 전환되지 않음
+
+> ~~문제: 프래그먼트가 전환되지 않음~~ <br>
+> `botton_nav_menu.xml` 과 `main_navigaion.xml` id 가 일치하지 않으면 프래그먼트가 연결되지 않음
+
+### 검색 인터페이스
+https://developer.android.com/guide/topics/search/search-dialog?hl=ko
+https://salix97.tistory.com/231
+https://developer.android.com/guide/navigation/navigation-ui?hl=ko
+
+검색 인터페이스 종류
++ `Search Dialog`
++ `SearchView` 위젯
+
+검색 가능한 구성 XML 파일
++ 검색 대화상자 또는 위젯의 특정 UI 요소를 구성
++ _추천 검색어_ 및 _음성 검색_과 같은 기능의 작동방식 정의
++ 일반적인 이름으로 `searchable.xml`
+```kotlin
+ <?xml version="1.0" encoding="utf-8"?>
+    <searchable xmlns:android="http://schemas.android.com/apk/res/android"
+        android:label="@string/app_label"
+        android:hint="@string/search_hint" >
+    </searchable>
+```
+검색 가능 Activity
++ 사용자가 검색 대화상자 또는 위젯에서 검색을 실행하면 시스템에서 검색 가능 활동을 시작하고 `ACTION_SEARCH` 작업을 통해 `Intent` 에 포함하여 검색어를 전달
++ manifest의 <activity> 요소 내부에서 다음과 같이 설정
+ + ACTION_SEARCH 인텐트를 허용하는 활동을 <intent-filter> 요소에서 선언
+ + 사용할 검색 가능한 구성을 <meta-data> 요소에서 지정
+```kotlin
+<application ... >
+<activity android:name=".SearchableActivity" >
+<intent-filter>
+<action android:name="android.intent.action.SEARCH" />
+</intent-filter>
+<meta-data android:name="android.app.searchable"
+android:resource="@xml/searchable"/>
+</activity>
+...
+</application>
+```
