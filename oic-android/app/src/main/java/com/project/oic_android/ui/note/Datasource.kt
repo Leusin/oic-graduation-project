@@ -1,18 +1,11 @@
 package com.project.oic_android.ui.note
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import com.project.oic_android.R
 import com.project.oic_android.model.Word
 
-class NoteViewModel : ViewModel() {
+class Datasource {
 
-    private val _text = MutableLiveData<String>().apply {
-        value = "This is 단어장 Fragment"
-    }
-    val text: LiveData<String> = _text
-
+    // 하드코딩
     val words : List<Word> = listOf(
         Word(
             R.mipmap.ic_launcher,
@@ -55,4 +48,5 @@ class NoteViewModel : ViewModel() {
         )
 
     )
+
 }

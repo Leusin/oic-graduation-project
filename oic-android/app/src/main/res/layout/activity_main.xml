@@ -30,9 +30,9 @@
                     android:id="@+id/toolbar_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
-                    android:layout_marginBottom="12dp"
-                    android:layout_marginLeft="24dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginStart="24dp"
                     android:text="@string/title_search"
                     android:textColor="#FFFFFF"
                     android:textSize="18sp"
@@ -44,14 +44,19 @@
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     android:layout_weight="1" />
-                <ImageView
+                <TextView
                     android:id="@+id/order_set"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_gravity="center_vertical"
-                    android:src="@drawable/ic_baseline_more_vert_24"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginEnd="24dp"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp"
+                    android:textStyle="normal"
+                    android:text="@string/toolbar_order"
                     app:tint="@color/white"
-                    android:visibility="gone"/>
+                    android:visibility="visible"/>
             </LinearLayout>
 
             <androidx.appcompat.widget.SearchView
@@ -86,10 +91,11 @@
         android:layout_height="0dp"
         app:defaultNavHost="true"
         app:layout_constraintBottom_toTopOf="@id/nav_view"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintVertical_bias="0.0"
         app:navGraph="@navigation/main_navigation" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

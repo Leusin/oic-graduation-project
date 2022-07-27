@@ -214,3 +214,23 @@ android:resource="@xml/searchable"/>
 ...
 </application>
 ```
+
+
+### 리사이클러 뷰
+https://developer.android.com/codelabs/basic-android-kotlin-training-recyclerview-scrollable-list?continue=https%3A%2F%2Fdeveloper.android.com%2Fcourses%2Fpathways%2Fandroid-basics-kotlin-unit-2-pathway-3%23codelab-https%3A%2F%2Fdeveloper.android.com%2Fcodelabs%2Fbasic-android-kotlin-training-recyclerview-scrollable-list#0
+https://developer.android.com/codelabs/basic-android-kotlin-training-project-dogglers-app#0
+
++ 데이터 소스가 되는 클래스 만들기
+  + DataSource
+  + model
++ 항목의 레이아웃 구성 - `list_item.xml`
++ 어댑터 구현 - `ItemAdapter.kt`
++ `viewHolder` - recycle 뷰에 설정해야하는 뷰 바인딩
++ `onCreateViewHolder()` 에서 레이아웃 확장
++ `getItemCount()`
++ `onBindingViewHolder()` - 각 recycler 뷰에서 데이터 설정
+
+
+## 커스텀 달력
+https://github.com/iSoron/uhabits
+https://androidexample365.com/a-calendar-to-integrate-calendar-with-custom-design-in-your-jetpack-compose-project/

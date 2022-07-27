@@ -28,4 +28,6 @@
     <string name="title_search">검색</string>
     <string name="title_note">단어장</string>
     <string name="title_account">내계정</string>
+    <string name="note_switch">뜻 보기</string>
+    <string name="toolbar_order">정렬</string>
 </resources>
