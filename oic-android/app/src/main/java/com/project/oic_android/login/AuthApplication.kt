@@ -1,4 +1,4 @@
-package com.project.oic_android
+package com.project.oic_android.login
 
 import androidx.multidex.MultiDexApplication
 import com.google.firebase.auth.FirebaseAuth

@@ -1,4 +1,4 @@
-package com.project.oic_android
+package com.project.oic_android.login
 
 import android.content.Intent
 import android.os.Bundle
@@ -11,7 +11,10 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.GoogleAuthProvider
+import com.project.oic_android.MainActivity
+import com.project.oic_android.R
 import com.project.oic_android.databinding.ActivityLoginBinding
+import com.project.oic_android.ui.account.AccountFragment
 
 class LoginActivity : AppCompatActivity() {
 
@@ -33,20 +36,15 @@ class LoginActivity : AppCompatActivity() {
                 val account = task.getResult(ApiException::class.java)!!
                 val credential = GoogleAuthProvider.getCredential(account.idToken, null)
                 AuthApplication.auth.signInWithCredential(credential).addOnCompleteListener(this) { task ->
-                    if (task.isSuccessful) { AuthApplication.email = account.email ; changeVisibility("login") }
+                    // 로그인 성공
+                    if (task.isSuccessful) { AuthApplication.email = account.email; changeVisibility("구글 계정") }
                     else { changeVisibility("logout") }
                 }
             }
             catch (e:ApiException) { changeVisibility("logout") }
         }
-          // 로그아웃
-//        binding.loginTalk.setOnClickListener {
-//            AuthApplication.auth.signOut()
-//            AuthApplication.email = null
-//            changeVisibility("logout")
-//        }
 
-        // 구글 로그인
+        // 구글 로그인 버튼
         binding.loginGoogle.setOnClickListener {
             val gso = GoogleSignInOptions
                 .Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -57,7 +55,7 @@ class LoginActivity : AppCompatActivity() {
             requestLauncher.launch(signInIntent)
         }
 
-        // 이메일 회원가입
+        // 이메일 회원가입 버튼
         binding.actionJoinIn.setOnClickListener {
             val email = binding.usernameJoin.text.toString()
             val password = binding.passwordJoin.text.toString()
@@ -85,7 +83,10 @@ class LoginActivity : AppCompatActivity() {
                     binding.username.text.clear()
                     binding.password.text.clear()
                     if (task.isSuccessful) {
-                        if (AuthApplication.checkAuth()) { AuthApplication.email = email; changeVisibility("login") }
+                        if (AuthApplication.checkAuth()) {
+                            // 로그인 성공
+                            AuthApplication.email = email; changeVisibility("이메일")
+                        }
                         else {Toast.makeText(baseContext, "인증 메일을 확인해 주세요", Toast.LENGTH_SHORT).show()}
                     }
                     else {
@@ -94,9 +95,9 @@ class LoginActivity : AppCompatActivity() {
                 }
         }
 
-        // login test
+        // 카카오톡 로그인
         binding.loginTalk.setOnClickListener {
-            changeVisibility("login")
+            changeVisibility("카카오 계정")
             finish()
         }
 
@@ -114,13 +115,18 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
+    // 가입 방법 프래그먼트로 전달
+    private fun loginMethod(method: String){
+        val accountFragment = AccountFragment()
+        val bundle = Bundle()
+        bundle.putString("method", method)
+        accountFragment.arguments = bundle
+
+    }
+
     // 화면 전환
-    fun changeVisibility(mode: String){
-        if (mode == "login") {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-        }
-        else if (mode == "logout"){
+    private fun changeVisibility(mode: String){
+        if (mode == "logout"){
             binding.run {
                 backIcon.visibility = GONE
                 greet.visibility = GONE
@@ -156,6 +162,13 @@ class LoginActivity : AppCompatActivity() {
                 loginTalk.visibility = GONE
                 loginGoogle.visibility = GONE
             }
+        } // 회원가입 화면
+        else {
+            // 메인 액티비티로 이동
+            val intent = Intent(this, MainActivity::class.java)
+            intent.putExtra("method", mode)
+            startActivity(intent)
+            finish()
         }
     }
 }

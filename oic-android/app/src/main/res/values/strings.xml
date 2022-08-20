@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">OIC</string>
 
-<!--
+    <!--
     <string name="default_web_client_id" translatable="false">924806410873-h6p3e9gm2a6neo7kcqgtam73dl88pkdu.apps.googleusercontent.com</string>
 -->
 
@@ -28,6 +28,20 @@
     <string name="title_search">검색</string>
     <string name="title_note">단어장</string>
     <string name="title_account">내계정</string>
-    <string name="note_switch">뜻 보기</string>
     <string name="toolbar_order">정렬</string>
+
+    <!-- note fragment -->
+    <string name="note_switch">뜻 보기</string>
+
+    <!-- account fragment-->
+    <string name="account_logout">로그아웃</string>
+    <string name="account_withdraw">회원 탈퇴</string>
+
+    <!-- dialog fragment -->
+    <string name="logout_massage">로그아웃 하시겠습니까</string>
+    <string name="logout_ok">로그아웃</string>
+    <string name="withdraw_massage">정말 회원탈퇴 하시겠습니까</string>
+    <string name="withdraw_ok">회원탈퇴</string>
+    <string name="cancel">돌아가기</string>
+
 </resources>
