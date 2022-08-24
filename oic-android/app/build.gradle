@@ -81,9 +81,4 @@ dependencies {
     implementation "androidx.camera:camera-lifecycle:${camerax_version}"
     implementation "androidx.camera:camera-view:${camerax_version}"
 
-    // Moshi
-    implementation "com.squareup.moshi:moshi-kotlin:1.12.0"
-    // Retrofit with Moshi Converter
-    implementation "com.squareup.retrofit2:converter-moshi:2.9.0"
-    implementation "androidx.legacy:legacy-support-v4:1.0.0"
 }

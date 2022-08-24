@@ -4,10 +4,6 @@
 # oic-android
 + [스플래시 스크린 생성](#스플래시-스크린)
 + [로그인](#로그인)
-+ [카메라](#카메라)
-+ [하단 네비게이션](#하단-네비게이션)
-+ [툴바 업데이트](#툴바-업데이트)
-+ [검색 인터페이스](#검색-인터페이스)
 
 ## 스플래시 스크린
 https://developer.android.com/guide/topics/ui/splash-screen/migrate
@@ -110,7 +106,7 @@ https://chetan-garg36.medium.com/resolve-default-web-client-id-please-a37508e3f8
 https://developer.android.com/training/camerax/architecture?hl=ko
 https://developer.android.com/codelabs/camerax-getting-started#0
 
-### Gradle
+## Gradle
 ```kotlin
 dependencies {
   def camerax_version = "1.1.0-beta01"
@@ -152,13 +148,13 @@ https://stackoverflow.com/questions/40760625/how-to-check-permission-in-fragment
 requestPermissions(REQUIRED_PERMISSIONS, REQUEST_CODE_PERMISSIONS) 
 ```
 
-## 하단 네비게이션
+### 하단 네비게이션
 https://www.youtube.com/watch?v=Chso6xrJ6aU&ab_channel=Stevdza-San
 
 > ~~문제: 프래그먼트가 전환되지 않음~~ <br>
 > `botton_nav_menu.xml` 과 `main_navigaion.xml` id 가 일치하지 않으면 프래그먼트가 연결되지 않음
 
-## 툴바 업데이트
+### 툴바 업데이트
 https://developer.android.com/reference/androidx/navigation/NavController#addOnDestinationChangedListener(androidx.navigation.NavController.OnDestinationChangedListener)
 https://stackoverflow.com/questions/52511136/how-to-set-title-in-app-bar-with-navigation-architecture-component
 https://youngest-programming.tistory.com/333
@@ -181,7 +177,7 @@ val navController = findNavController(R.id.nav_host_fragment_activity_main)
 프래그먼트의 목적지에 따라 툴바 UI 업데이트
 
 
-## 검색 인터페이스
+### 검색 인터페이스
 https://developer.android.com/guide/topics/search/search-dialog?hl=ko
 https://salix97.tistory.com/231
 https://developer.android.com/guide/navigation/navigation-ui?hl=ko
@@ -220,6 +216,27 @@ android:resource="@xml/searchable"/>
 ```
 
 
+<<<<<<< HEAD
 ## openCV 적용
 https://www.youtube.com/watch?v=oIk2hTPxFqs&ab_channel=Ancode
 https://rick38yip.medium.com/camerax-on-android-fragment-in-kotlin-with-imageanalyzer-9cb58f9182a8
+=======
+### 리사이클러 뷰
+https://developer.android.com/codelabs/basic-android-kotlin-training-recyclerview-scrollable-list?continue=https%3A%2F%2Fdeveloper.android.com%2Fcourses%2Fpathways%2Fandroid-basics-kotlin-unit-2-pathway-3%23codelab-https%3A%2F%2Fdeveloper.android.com%2Fcodelabs%2Fbasic-android-kotlin-training-recyclerview-scrollable-list#0
+https://developer.android.com/codelabs/basic-android-kotlin-training-project-dogglers-app#0
+
++ 데이터 소스가 되는 클래스 만들기
+  + DataSource
+  + model
++ 항목의 레이아웃 구성 - `list_item.xml`
++ 어댑터 구현 - `ItemAdapter.kt`
++ `viewHolder` - recycle 뷰에 설정해야하는 뷰 바인딩
++ `onCreateViewHolder()` 에서 레이아웃 확장
++ `getItemCount()`
++ `onBindingViewHolder()` - 각 recycler 뷰에서 데이터 설정
+
+
+## 커스텀 달력
+https://github.com/iSoron/uhabits
+https://androidexample365.com/a-calendar-to-integrate-calendar-with-custom-design-in-your-jetpack-compose-project/
+>>>>>>> parent of b395c87 (minor update)

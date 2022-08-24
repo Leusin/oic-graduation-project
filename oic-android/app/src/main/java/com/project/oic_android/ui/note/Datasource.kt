@@ -1,7 +1,7 @@
 package com.project.oic_android.ui.note
 
 import com.project.oic_android.R
-import com.project.oic_android.network.Word
+import com.project.oic_android.model.Word
 
 class Datasource {
 

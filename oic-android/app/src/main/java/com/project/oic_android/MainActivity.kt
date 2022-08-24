@@ -1,17 +1,26 @@
 package com.project.oic_android
 
 import android.os.Bundle
+import android.view.Menu
 import android.view.View
 import android.widget.ArrayAdapter
-import android.widget.AutoCompleteTextView
-import android.widget.SearchView
 import android.widget.Toast
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.SearchView
+import androidx.appcompat.widget.Toolbar
+import androidx.navigation.NavController
+import androidx.navigation.NavDirections
 import androidx.navigation.findNavController
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.google.android.gms.common.internal.AccountAccessor
 import com.project.oic_android.R.id.*
 import com.project.oic_android.databinding.ActivityMainBinding
+import com.project.oic_android.ui.account.AccountFragment
+import com.project.oic_android.ui.note.NoteFragment
+import com.project.oic_android.ui.search.SearchFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -24,18 +33,21 @@ class MainActivity : AppCompatActivity() {
 
         // 프래그먼트 화면 전환
         val navView: BottomNavigationView = binding.navView
-        val navController = findNavController(nav_host_fragment_activity_main)
+        val navController = findNavController(R.id.nav_host_fragment_activity_main)
+
+        // 타이틀
+        //val appBarConfiguration = AppBarConfiguration(setOf(R.id.navigation_search, R.id.navigation_note, R.id.navigation_account))
+        //findViewById<Toolbar>(R.id.toolbar).setupWithNavController(navController, appBarConfiguration)
+        //setupActionBarWithNavController(navController, appBarConfiguration)
+
         navView.setupWithNavController(navController)
+
         supportFragmentManager.beginTransaction()
 
-        // toolbar 변환
+        // 프래그먼트에 따라 toolbar 구성요소 visibility 변화
         InitNavigationUI()
 
-        // 검색창
-        SearchView()
-
     }
-
     private fun SearchView() {
 
         // 예시 데이터터
@@ -61,6 +73,7 @@ class MainActivity : AppCompatActivity() {
     }
     // 프래그먼트에 따라 toolbar 구성요소 visibility 변화
     private fun InitNavigationUI() {
+
         val navController = findNavController(R.id.nav_host_fragment_activity_main)
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
@@ -69,11 +82,9 @@ class MainActivity : AppCompatActivity() {
                 else -> "Default title"
             }
 
-            when (destination.id) {
-                navigation_search -> { binding.toolbarTitle.text = "단어장"; binding.searchView.visibility = View.VISIBLE; binding.orderSet.visibility = View.GONE }
-                navigation_note -> { binding.toolbarTitle.text = "단어장"; binding.searchView.visibility = View.GONE; binding.orderSet.visibility = View.VISIBLE}
-                navigation_account -> {binding.toolbarTitle.text = "내계정"; binding.searchView.visibility = View.GONE; binding.orderSet.visibility = View.GONE}
-            }
+            if (destination.id == navigation_search) { binding.toolbarTitle.text = "단어장"; binding.searchView.visibility = View.VISIBLE; binding.orderSet.visibility = View.GONE }
+            else if (destination.id == navigation_note) { binding.toolbarTitle.text = "단어장"; binding.searchView.visibility = View.GONE; binding.orderSet.visibility = View.VISIBLE}
+            else if (destination.id == navigation_account) {binding.toolbarTitle.text = "내계정"; binding.searchView.visibility = View.GONE; binding.orderSet.visibility = View.GONE}
         }
     }
 }
