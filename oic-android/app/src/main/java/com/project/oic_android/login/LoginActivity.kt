@@ -11,9 +11,9 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.GoogleAuthProvider
+import com.project.oic_android.databinding.ActivityLoginBinding
 import com.project.oic_android.MainActivity
 import com.project.oic_android.R
-import com.project.oic_android.databinding.ActivityLoginBinding
 import com.project.oic_android.ui.account.AccountFragment
 
 class LoginActivity : AppCompatActivity() {

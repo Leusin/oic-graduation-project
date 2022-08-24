@@ -14,7 +14,6 @@ class ItemAdapter(
     private val dataset: List<Word>
 ) : RecyclerView.Adapter<ItemAdapter.ItemViewHolder>() {
 
-
     interface OnItemClickListener { fun onClick(v: View, data: Word, position: Int) }
 
     private var listener : OnItemClickListener? = null

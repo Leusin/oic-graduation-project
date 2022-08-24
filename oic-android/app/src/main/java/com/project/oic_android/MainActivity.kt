@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
     private fun SearchView() {
 
         // 예시 데이터터
-        val datas = arrayListOf("apple", "orange", "banana", "kiwifruit", "apple", "pineapple", "peach")
+        val datas = arrayListOf("apart", "aphid", "aping", "apnea", "apple", "apron", "arbor")
 
         // 자동 완성
         val searchAutoComplete: androidx.appcompat.widget.SearchView.SearchAutoComplete =

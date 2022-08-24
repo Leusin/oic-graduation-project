@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import com.project.oic_android.login.AuthApplication
 import com.project.oic_android.MainActivity
 import com.project.oic_android.databinding.FragmentAccountBinding
@@ -21,9 +20,6 @@ class AccountFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val accountViewModel =
-            ViewModelProvider(this).get(AccountViewModel::class.java)
-
         _binding = FragmentAccountBinding.inflate(inflater, container, false)
         val root: View = binding.root
 

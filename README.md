@@ -218,3 +218,8 @@ android:resource="@xml/searchable"/>
 ...
 </application>
 ```
+
+
+## openCV 적용
+https://www.youtube.com/watch?v=oIk2hTPxFqs&ab_channel=Ancode
+https://rick38yip.medium.com/camerax-on-android-fragment-in-kotlin-with-imageanalyzer-9cb58f9182a8
