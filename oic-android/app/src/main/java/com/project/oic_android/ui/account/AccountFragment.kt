@@ -28,7 +28,7 @@ class AccountFragment : Fragment() {
 
         // 회원 정보
         val method = arguments?.getString("method")
-        binding.methodText.text = (activity as MainActivity).getData()
+        binding.methodText.text = (activity as MainActivity).getUserData()
         binding.idText.text = AuthApplication.email.toString()
 
         return root

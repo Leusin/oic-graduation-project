@@ -5,18 +5,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.CompoundButton
-import android.widget.Switch
-import android.widget.ToggleButton
-import androidx.core.content.ContextCompat.startActivity
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.project.oic_android.WordActivity
-import com.project.oic_android.adapter.ItemAdapter
+import com.project.oic_android.WordDetailActivity
+import com.project.oic_android.adapters.ItemAdapter
 import com.project.oic_android.databinding.FragmentNoteBinding
-import com.project.oic_android.network.Word
-import org.opencv.ml.SVM.C
+import com.project.oic_android.modelData.Word
 
 class NoteFragment : Fragment() {
 
@@ -57,7 +51,7 @@ class NoteFragment : Fragment() {
     private fun recyclerViewClickEvent(){
         itemAdapter.setOnItemClickListener(object : ItemAdapter.OnItemClickListener{
             override fun onItemClick(view: View, data: Word, position: Int) {
-                Intent(context, WordActivity::class.java).apply {
+                Intent(context, WordDetailActivity::class.java).apply {
                     putExtra("data", data)
                     addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                 }.run { startActivity(this) }

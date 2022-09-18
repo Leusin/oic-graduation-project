@@ -4,6 +4,8 @@
 # oic-android
 + [스플래시 스크린 생성](#스플래시-스크린)
 + [로그인](#로그인)
++ [카메라](#카메라)
++ [검색](#검색)
 
 ## 스플래시 스크린
 https://developer.android.com/guide/topics/ui/splash-screen/migrate
@@ -91,8 +93,8 @@ MultiDex 는 앱을 빌드 할 때 "Cannot fit requested classes in a single dex
 SHA-1: 우측 상단 Gralde > android > signingReport
 
 ### gradle 에 카카오톡 로그인 모듈
-` implementation "com.kakao.sdk:v2-user:2.3.0"` 를 추가하면 구글 로그인 코드에 오류 발생
-> Unresolved reference: default_web_client_id
+`implementation "com.kakao.sdk:v2-user:2.3.0"`~~를 추가하면 구글 로그인 코드에 오류 발생~~
+> ~~Unresolved reference: default_web_client_id~~
 
 ∴ 카카오톡 로그인은 주요기능 구현 후에 추가
 
@@ -106,7 +108,7 @@ https://chetan-garg36.medium.com/resolve-default-web-client-id-please-a37508e3f8
 https://developer.android.com/training/camerax/architecture?hl=ko
 https://developer.android.com/codelabs/camerax-getting-started#0
 
-## Gradle
+### Gradle
 ```kotlin
 dependencies {
   def camerax_version = "1.1.0-beta01"
@@ -177,7 +179,8 @@ val navController = findNavController(R.id.nav_host_fragment_activity_main)
 프래그먼트의 목적지에 따라 툴바 UI 업데이트
 
 
-### 검색 인터페이스
+## 검색 
+### 인터페이스
 https://developer.android.com/guide/topics/search/search-dialog?hl=ko
 https://salix97.tistory.com/231
 https://developer.android.com/guide/navigation/navigation-ui?hl=ko
@@ -214,7 +217,11 @@ android:resource="@xml/searchable"/>
 ...
 </application>
 ```
-
+### Retrofit
+https://stackoverflow.com/questions/71443632/how-can-i-use-free-dictionary-api-to-get-the-top-definition-of-a-word
+https://velog.io/@plz_no_anr/Android-REST-API
+https://github.com/gokulakrishnan001/Dictionary
+https://underdog11.tistory.com/entry/Kotlin-%EB%A0%88%ED%8A%B8%EB%A1%9C%ED%95%8F-%EC%82%AC%EC%9A%A9%EB%B2%95-Interface-retrofitInstance-constant%EB%A7%8C%EB%93%A4%EA%B8%B0-GET%EC%9D%98%EB%AF%B8-JSON-To-Kotlin-%ED%94%8C%EB%9F%AC%EA%B7%B8%EC%9D%B8-%EB%89%B4%EC%8A%A4%EC%95%B1-%EB%A7%8C%EB%93%A4%EA%B8%B0-2%ED%8E%B8
 
 ### 리사이클러 뷰
 https://developer.android.com/codelabs/basic-android-kotlin-training-recyclerview-scrollable-list?continue=https%3A%2F%2Fdeveloper.android.com%2Fcourses%2Fpathways%2Fandroid-basics-kotlin-unit-2-pathway-3%23codelab-https%3A%2F%2Fdeveloper.android.com%2Fcodelabs%2Fbasic-android-kotlin-training-recyclerview-scrollable-list#0
@@ -237,7 +244,7 @@ https://yunaaaas.tistory.com/43
 ### putExtra 에러 문제 해결법
 https://yuuj.tistory.com/211
 https://yunaaaas.tistory.com/57?category=966969
->  에러가 나는 이유는 putExtra의 정해진 형식(String,int 등)과 맞지 않게 우리가 만든 데이터 형태(클래스)를 보내기 때문입니다. 이를 위해서는 Parcelize라는 기술을 사용하면 쉽게 해결할 수 있습니다.
+>  에러가 나는 이유는 putExtra 의 정해진 형식(String,int 등)과 맞지 않게 우리가 만든 데이터 형태(클래스)를 보내기 때문입니다. 이를 위해서는 Parcelize라는 기술을 사용하면 쉽게 해결할 수 있습니다.
 
 해결: Word.kt
 ```kotlin

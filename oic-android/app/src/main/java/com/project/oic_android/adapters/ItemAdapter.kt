@@ -1,20 +1,15 @@
-package com.project.oic_android.adapter
+package com.project.oic_android.adapters
 
-import android.content.Context
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.core.content.ContextCompat
-import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.project.oic_android.R
-import com.project.oic_android.WordActivity
-import com.project.oic_android.adapter.ItemAdapter.ItemViewHolder
-import com.project.oic_android.network.Word
+import com.project.oic_android.adapters.ItemAdapter.ItemViewHolder
+import com.project.oic_android.modelData.Word
 import com.project.oic_android.ui.note.NoteFragment
 
 class ItemAdapter(
@@ -62,14 +57,6 @@ class ItemAdapter(
                     listener?.onItemClick(itemView, item, position)
                 }
             }
-            // 클릭 이벤트 추가
-            //itemView.setOnClickListener {
-            //   Intent(itemView?.context, WordActivity::class.java).apply{
-            //        putExtra("data", item)
-            //        addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-            //    }.run { context.startActivity(this) }
-            //}
-
         }
     }
 }
