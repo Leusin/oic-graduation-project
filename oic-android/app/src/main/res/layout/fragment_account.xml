@@ -1,136 +1,177 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.account.AccountFragment"
-    android:paddingLeft="24dp"
-    android:paddingRight="24dp"
-    android:background="@color/app_background">
+    tools:context=".ui.account.AccountFragment" >
 
-    <FrameLayout
-        android:id="@+id/frameLayout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/shape_radius_50"
-        android:backgroundTint="@color/white"
-        android:elevation="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <ImageView
-            android:layout_width="72dp"
-            android:layout_height="72dp"
-            android:layout_margin="4dp"
-            android:src="@drawable/ic_baseline_person_24"
-            app:tint="#707070" />
-    </FrameLayout>
-
-    <TextView
-        android:id="@+id/date"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:text="가입일자"
-        android:textColor="#999999"
-        android:textSize="12dp"
-        app:layout_constraintBottom_toTopOf="@+id/line1"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/date_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:ems="10"
-        android:gravity="center_horizontal"
-        android:inputType="date"
-        android:text="2022. 11. 11"
-        android:textColor="#707070"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/line1"
-        app:layout_constraintEnd_toEndOf="@+id/line1"
-        app:layout_constraintStart_toStartOf="@+id/line1" />
-
-    <View
-        android:id="@+id/line1"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginTop="64dp"
-        android:background="#999999"
-        app:layout_constraintTop_toBottomOf="@+id/frameLayout"
-        tools:layout_editor_absoluteX="24dp" />
+        android:layout_height="match_parent"
+        android:paddingLeft="24dp"
+        android:paddingRight="24dp"
+        android:background="@color/app_background">
 
-    <TextView
-        android:id="@+id/method"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:text="가입방법"
-        android:textColor="#999999"
-        android:textSize="12dp"
-        app:layout_constraintBottom_toTopOf="@+id/line2"
-        app:layout_constraintStart_toStartOf="parent" />
+        <FrameLayout
+            android:id="@+id/frameLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/shape_radius_50"
+            android:backgroundTint="@color/white"
+            android:elevation="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
-        android:id="@+id/method_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:ems="10"
-        android:gravity="center_horizontal"
-        android:text="이메일로 가입"
-        android:textColor="#707070"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/line2"
-        app:layout_constraintEnd_toEndOf="@+id/line2"
-        app:layout_constraintStart_toStartOf="@+id/line2" />
+            <ImageView
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:layout_margin="4dp"
+                android:src="@drawable/ic_baseline_person_24"
+                app:tint="#707070" />
+        </FrameLayout>
 
-    <View
-        android:id="@+id/line2"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginTop="40dp"
-        android:background="#999999"
-        app:layout_constraintTop_toBottomOf="@+id/line1"
-        tools:layout_editor_absoluteX="3dp" />
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="가입일자"
+            android:textColor="#999999"
+            android:textSize="12dp"
+            app:layout_constraintBottom_toTopOf="@+id/line1"
+            app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
-        android:id="@+id/id"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:text="아이디"
-        android:textColor="#999999"
-        android:textSize="12dp"
-        app:layout_constraintBottom_toTopOf="@+id/line3"
-        app:layout_constraintStart_toStartOf="parent" />
+        <TextView
+            android:id="@+id/date_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:ems="10"
+            android:gravity="center_horizontal"
+            android:inputType="date"
+            android:text="2022. 11. 11"
+            android:textColor="#707070"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toTopOf="@+id/line1"
+            app:layout_constraintEnd_toEndOf="@+id/line1"
+            app:layout_constraintStart_toStartOf="@+id/line1" />
 
-    <TextView
-        android:id="@+id/id_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:ems="10"
-        android:gravity="center_horizontal"
-        android:text="OIC_2022@duksung.ac.kr"
-        android:textColor="#707070"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/line3"
-        app:layout_constraintEnd_toEndOf="@+id/line3"
-        app:layout_constraintStart_toStartOf="@+id/line3" />
+        <View
+            android:id="@+id/line1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="64dp"
+            android:background="#999999"
+            app:layout_constraintTop_toBottomOf="@+id/frameLayout"
+            tools:layout_editor_absoluteX="24dp" />
 
-    <View
-        android:id="@+id/line3"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginTop="40dp"
-        android:background="#999999"
-        app:layout_constraintTop_toBottomOf="@+id/line2"
-        tools:layout_editor_absoluteX="3dp" />
+        <TextView
+            android:id="@+id/method"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="가입방법"
+            android:textColor="#999999"
+            android:textSize="12dp"
+            app:layout_constraintBottom_toTopOf="@+id/line2"
+            app:layout_constraintStart_toStartOf="parent" />
 
+        <TextView
+            android:id="@+id/method_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:ems="10"
+            android:gravity="center_horizontal"
+            android:text="이메일로 가입"
+            android:textColor="#707070"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toTopOf="@+id/line2"
+            app:layout_constraintEnd_toEndOf="@+id/line2"
+            app:layout_constraintStart_toStartOf="@+id/line2" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <View
+            android:id="@+id/line2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="40dp"
+            android:background="#999999"
+            app:layout_constraintTop_toBottomOf="@+id/line1"
+            tools:layout_editor_absoluteX="3dp" />
+
+        <TextView
+            android:id="@+id/id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="아이디"
+            android:textColor="#999999"
+            android:textSize="12dp"
+            app:layout_constraintBottom_toTopOf="@+id/line3"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/id_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:ems="10"
+            android:gravity="center_horizontal"
+            android:text="OIC_2022@duksung.ac.kr"
+            android:textColor="#707070"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toTopOf="@+id/line3"
+            app:layout_constraintEnd_toEndOf="@+id/line3"
+            app:layout_constraintStart_toStartOf="@+id/line3" />
+
+        <View
+            android:id="@+id/line3"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="40dp"
+            android:background="#999999"
+            app:layout_constraintTop_toBottomOf="@+id/line2"
+            tools:layout_editor_absoluteX="3dp" />
+
+        <CalendarView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="32dp"
+            app:layout_constraintBottom_toTopOf="@+id/logout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/line3" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/logout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/shape_radius_24"
+            android:text="@string/account_logout"
+            android:textSize="14sp"
+            android:elevation="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/withdraw"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/withdraw"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            android:background="@drawable/shape_radius_24"
+            android:text="@string/account_withdraw"
+            android:textSize="14sp"
+            android:elevation="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

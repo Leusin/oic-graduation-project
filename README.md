@@ -216,11 +216,6 @@ android:resource="@xml/searchable"/>
 ```
 
 
-<<<<<<< HEAD
-## openCV 적용
-https://www.youtube.com/watch?v=oIk2hTPxFqs&ab_channel=Ancode
-https://rick38yip.medium.com/camerax-on-android-fragment-in-kotlin-with-imageanalyzer-9cb58f9182a8
-=======
 ### 리사이클러 뷰
 https://developer.android.com/codelabs/basic-android-kotlin-training-recyclerview-scrollable-list?continue=https%3A%2F%2Fdeveloper.android.com%2Fcourses%2Fpathways%2Fandroid-basics-kotlin-unit-2-pathway-3%23codelab-https%3A%2F%2Fdeveloper.android.com%2Fcodelabs%2Fbasic-android-kotlin-training-recyclerview-scrollable-list#0
 https://developer.android.com/codelabs/basic-android-kotlin-training-project-dogglers-app#0
@@ -235,8 +230,24 @@ https://developer.android.com/codelabs/basic-android-kotlin-training-project-dog
 + `getItemCount()`
 + `onBindingViewHolder()` - 각 recycler 뷰에서 데이터 설정
 
+### 리사이클러뷰에 클릭이벤트 추가
+https://yunaaaas.tistory.com/57
+https://yunaaaas.tistory.com/43
+
+### putExtra 에러 문제 해결법
+https://yuuj.tistory.com/211
+https://yunaaaas.tistory.com/57?category=966969
+>  에러가 나는 이유는 putExtra의 정해진 형식(String,int 등)과 맞지 않게 우리가 만든 데이터 형태(클래스)를 보내기 때문입니다. 이를 위해서는 Parcelize라는 기술을 사용하면 쉽게 해결할 수 있습니다.
+
+해결: Word.kt
+```kotlin
+data class Word(
+    val img: Int,
+    val word_eng: String,
+    val word_kor: String
+    ) : Serializable // <- 추가
+```
 
 ## 커스텀 달력
 https://github.com/iSoron/uhabits
 https://androidexample365.com/a-calendar-to-integrate-calendar-with-custom-design-in-your-jetpack-compose-project/
->>>>>>> parent of b395c87 (minor update)

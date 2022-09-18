@@ -9,15 +9,15 @@
       "client_info": {
         "mobilesdk_app_id": "1:924806410873:android:ecb24a5a7ca107d640daa8",
         "android_client_info": {
-          "package_name": "opencv.org"
+          "package_name": "com.project.oic_android"
         }
       },
       "oauth_client": [
         {
-          "client_id": "924806410873-sd4hmi51cinkbtkivptnqvck1npmit34.apps.googleusercontent.com",
+          "client_id": "924806410873-vfgm0dt5eco21beinrm4gr8ogagg7lgg.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "opencv.org",
+            "package_name": "com.project.oic_android",
             "certificate_hash": "1f5b321d8f47ff173298f0396f0ea79e12b845d2"
           }
         },

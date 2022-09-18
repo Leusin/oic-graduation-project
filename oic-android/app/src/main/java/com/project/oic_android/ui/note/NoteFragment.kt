@@ -1,41 +1,79 @@
 package com.project.oic_android.ui.note
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.CompoundButton
+import android.widget.Switch
+import android.widget.ToggleButton
+import androidx.core.content.ContextCompat.startActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.project.oic_android.WordActivity
 import com.project.oic_android.adapter.ItemAdapter
 import com.project.oic_android.databinding.FragmentNoteBinding
+import com.project.oic_android.network.Word
+import org.opencv.ml.SVM.C
 
 class NoteFragment : Fragment() {
 
     private var _binding: FragmentNoteBinding? = null
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
+
+    val data = Datasource().words // 아이템 배열
+    lateinit var itemAdapter: ItemAdapter// 어댑터
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val dashboardViewModel =
-            ViewModelProvider(this).get(NoteViewModel::class.java)
-
         _binding = FragmentNoteBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        //val textView: TextView = binding.textDashboard
-        //dashboardViewModel.text.observe(viewLifecycleOwner) {
-        //    textView.text = it
-        //}
-
-        val data = Datasource().words
-        binding.recyclerView.adapter = ItemAdapter(this, data)
+        itemAdapter  = ItemAdapter(this, data)
 
         return root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        initRecyclerView()
+        recyclerViewClickEvent()
+
+        switchButtonEvent()
+    }
+
+    private fun initRecyclerView(){
+        binding.recyclerView.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+        itemAdapter.notifyDataSetChanged()
+        binding.recyclerView.adapter = itemAdapter
+    }
+
+    private fun recyclerViewClickEvent(){
+        itemAdapter.setOnItemClickListener(object : ItemAdapter.OnItemClickListener{
+            override fun onItemClick(view: View, data: Word, position: Int) {
+                Intent(context, WordActivity::class.java).apply {
+                    putExtra("data", data)
+                    addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                }.run { startActivity(this) }
+            }
+        })
+    }
+
+    private fun switchButtonEvent(){
+        binding.switch1.isChecked = true
+        binding.switch1.setOnCheckedChangeListener { _, isChecked ->
+            if (isChecked){
+                // 뜻 나타남 이벤트 추가
+            } else {
+                // 뜻 없어짐 이벤트 추가
+            }
+        }
     }
 
     override fun onDestroyView() {

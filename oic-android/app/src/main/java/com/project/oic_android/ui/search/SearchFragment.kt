@@ -2,10 +2,13 @@ package com.project.oic_android.ui.search
 
 import android.Manifest
 import android.annotation.SuppressLint
+import android.content.ContentValues
 import android.content.Context
 import android.content.pm.PackageManager
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
+import android.provider.MediaStore
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -16,14 +19,16 @@ import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.project.oic_android.databinding.FragmentSearchBinding
-import org.opencv.android.Utils
-import org.opencv.core.Mat
 import java.io.File
 import java.text.SimpleDateFormat
 import java.util.*
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
 import com.project.oic_android.R
+import org.opencv.android.OpenCVLoader
+import org.opencv.android.Utils
+import org.opencv.core.Mat
+import java.nio.ByteBuffer
 
 typealias CornersListener = () -> Unit
 
@@ -32,15 +37,12 @@ class SearchFragment : Fragment() {
     private var _binding: FragmentSearchBinding? = null
     private val binding get() = _binding!!
 
-    private lateinit var safeContext: Context
-    private var imageCapture: ImageCapture? = null
-    private lateinit var cameraExecutor: ExecutorService
-
     private var preview: Preview? = null
-    private var imageAnalyzer: ImageAnalysis? = null
-    private var camera: Camera? = null
-    private lateinit var outputDirectory: File
+    private var imageCapture: ImageCapture? = null
 
+    private lateinit var safeContext: Context
+
+    private lateinit var cameraExecutor: ExecutorService
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -54,7 +56,6 @@ class SearchFragment : Fragment() {
     ): View {
         _binding = FragmentSearchBinding.inflate(inflater, container, false)
         return binding.root
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -67,8 +68,6 @@ class SearchFragment : Fragment() {
 
         // 촬영 버튼 리스너
         binding.captureButton.setOnClickListener { takePhoto() }
-
-        outputDirectory = getOutputDirectory()
 
         cameraExecutor = Executors.newSingleThreadExecutor()
     }
@@ -83,19 +82,10 @@ class SearchFragment : Fragment() {
             // 미리보기
             preview = Preview.Builder()
                 .build()
-                //.also { it.setSurfaceProvider(binding.viewFinder.surfaceProvider) }
+                .also { it.setSurfaceProvider(binding.viewFinder.surfaceProvider) }
 
             imageCapture = ImageCapture.Builder().build()
 
-            imageAnalyzer = ImageAnalysis.Builder().build().apply {
-                setAnalyzer(Executors.newSingleThreadExecutor(), CornerAnalyzer {
-                    val bitmap = binding.viewFinder.bitmap
-                    val img = Mat()
-                    Utils.bitmapToMat(bitmap, img)
-                    bitmap?.recycle()
-                    // Do image analysis here if you need bitmap
-                })
-            }
             // 후면 카메라를 기본 카메라로 설정
             val cameraSelector = CameraSelector.DEFAULT_BACK_CAMERA
 
@@ -104,8 +94,8 @@ class SearchFragment : Fragment() {
                 cameraProvider.unbindAll()
 
                 // Bind use cases to camera
-                camera = cameraProvider.bindToLifecycle(this, cameraSelector, imageAnalyzer, preview, imageCapture)
-                preview?.setSurfaceProvider(binding.viewFinder.surfaceProvider)
+                cameraProvider.bindToLifecycle(this, cameraSelector, preview, imageCapture)
+
             } catch(exc: Exception) {
                 Log.e(TAG, "Use case binding failed", exc)
             }
@@ -116,32 +106,38 @@ class SearchFragment : Fragment() {
     private fun takePhoto() {
         val imageCapture = imageCapture ?: return
 
-        val photoFile = File(outputDirectory, SimpleDateFormat(FILENAME_FORMAT, Locale.US).format(System.currentTimeMillis()) + ".jpg")
+        val name = SimpleDateFormat(FILENAME_FORMAT, Locale.US)
+            .format(System.currentTimeMillis())
+        val contentValues = ContentValues().apply {
+            put(MediaStore.MediaColumns.DISPLAY_NAME, name)
+            put(MediaStore.MediaColumns.MIME_TYPE, "image/jpeg")
+            if(Build.VERSION.SDK_INT > Build.VERSION_CODES.P) {
+                put(MediaStore.Images.Media.RELATIVE_PATH, "Pictures/CameraX-Image")
+            }
+        }
 
-        val outputOptions = ImageCapture.OutputFileOptions.Builder(photoFile).build()
-        // 촬영
-        imageCapture.takePicture(outputOptions, ContextCompat.getMainExecutor(safeContext), object : ImageCapture.OnImageSavedCallback {
-                override fun onError(exc: ImageCaptureException) {
-                    Log.e(TAG, "Photo capture failed: ${exc.message}", exc)
-                }
+        val resolver = activity!!.contentResolver
+        val outputOptions = ImageCapture.OutputFileOptions
+            .Builder(resolver,
+                MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
+                contentValues)
+            .build()
 
-                override fun onImageSaved(output: ImageCapture.OutputFileResults){
-                    val savedUri = Uri.fromFile(photoFile)
-                    val msg = "Photo capture succeeded: $savedUri"
+        imageCapture.takePicture(
+            outputOptions,
+            ContextCompat.getMainExecutor(safeContext),
+            object : ImageCapture.OnImageSavedCallback { override fun onError(exc: ImageCaptureException) {
+                Log.e(TAG, "Photo capture failed: ${exc.message}", exc)
+            }
+
+                override fun
+                        onImageSaved(output: ImageCapture.OutputFileResults){
+                    val msg = "Photo capture succeeded: ${output.savedUri}"
                     Toast.makeText(safeContext, msg, Toast.LENGTH_SHORT).show()
                     Log.d(TAG, msg)
                 }
-            })
-    }
-
-    override fun onPause() {
-        super.onPause()
-        isOffline = true
-    }
-
-    override fun onResume() {
-        super.onResume()
-        isOffline = false
+            }
+        )
     }
 
     // 권한 처리
@@ -157,36 +153,12 @@ class SearchFragment : Fragment() {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
     }
 
-    private fun getOutputDirectory(): File {
-        val mediaDir = activity?.externalMediaDirs?.firstOrNull()?.let {
-            File(it, resources.getString(R.string.app_name)).apply { mkdirs() }
-        }
-        return if (mediaDir != null && mediaDir.exists()) mediaDir else activity?.filesDir!!
-    }
-
     companion object {
         private const val TAG = "CameraX"
         private const val FILENAME_FORMAT = "yyyy-MM-dd-HH-mm-ss-SSS"
         private const val REQUEST_CODE_PERMISSIONS = 10
         private val REQUIRED_PERMISSIONS = arrayOf(Manifest.permission.CAMERA)
         var isOffline = false // prevent app crash when goes offline
-    }
-
-    private class CornerAnalyzer(private val listener: CornersListener) : ImageAnalysis.Analyzer {
-        /*
-        private fun ByteBuffer.toByteArray(): ByteArray {
-            rewind()    // Rewind the buffer to zero
-            val data = ByteArray(remaining())
-            get(data)   // Copy the buffer into a byte array
-            return data // Return the byte array
-        }
-        */
-        @SuppressLint("UnsafeExperimentalUsageError")
-        override fun analyze(imageProxy: ImageProxy) {
-            if (!isOffline) { listener() }
-            imageProxy.close()
-        }
-
     }
 
     override fun onDestroyView() {
