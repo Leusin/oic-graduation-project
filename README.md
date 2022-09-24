@@ -150,6 +150,13 @@ https://stackoverflow.com/questions/40760625/how-to-check-permission-in-fragment
 requestPermissions(REQUIRED_PERMISSIONS, REQUEST_CODE_PERMISSIONS) 
 ```
 
+### 촬영 이미지 뷰에 띄우기
+https://itstudy-mary.tistory.com/361
+https://github.com/littlemary1379/RandomColorChart/blob/master/app/src/main/java/com/mary/kotlinprojectstudy/camera/CameraActivity.kt
+
+### 촬영 이미지 전송
+https://onedaycodeing.tistory.com/168
+
 ### 하단 네비게이션
 https://www.youtube.com/watch?v=Chso6xrJ6aU&ab_channel=Stevdza-San
 

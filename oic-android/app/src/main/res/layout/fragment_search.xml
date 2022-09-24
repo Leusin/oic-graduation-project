@@ -9,9 +9,7 @@
     <androidx.camera.view.PreviewView
         android:id="@+id/viewFinder"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
-
-    </androidx.camera.view.PreviewView>
+        android:layout_height="match_parent" />
 
     <LinearLayout
         android:id="@+id/capture_button"
@@ -27,11 +25,13 @@
         app:layout_constraintStart_toStartOf="parent"
         android:orientation="vertical">
         <ImageView
-            android:layout_width="36dp"
-            android:layout_height="36dp"
+            android:id="@+id/button_icon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_gravity="center_horizontal"
             android:src="@drawable/ic_baseline_camera_alt_24" />
         <TextView
+            android:id="@+id/button_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
@@ -39,4 +39,12 @@
             android:textColor="@color/purple_500"
             android:text="촬영" />
     </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/frameLayoutShutter"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#1e1e1e"
+        android:visibility="gone" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

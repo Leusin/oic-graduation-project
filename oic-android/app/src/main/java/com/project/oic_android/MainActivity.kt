@@ -6,6 +6,7 @@ import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.Toast
@@ -16,16 +17,18 @@ import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.project.oic_android.R.id.*
 import com.project.oic_android.databinding.ActivityMainBinding
+import com.project.oic_android.retrofit.NaverAPI
+import com.project.oic_android.modelData.ResultTransferPapago
 import com.project.oic_android.modelData.Word
 import com.project.oic_android.retrofit.RetrofitInstance
+import com.project.oic_android.ui.note.WordDetailActivity
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import retrofit2.HttpException
-import java.io.IOException
-import java.io.UnsupportedEncodingException
-import java.net.URLEncoder
+import retrofit2.*
+import retrofit2.converter.gson.GsonConverterFactory
+import java.io.*
 import kotlin.system.exitProcess
 
 class MainActivity : AppCompatActivity() {
@@ -145,12 +148,6 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private fun openDetailWordPage(word: Word) {
-        val intent = Intent(this, WordDetailActivity::class.java)
-        intent.putExtra("data", word)
-        startActivity(intent)
-    }
-
     private fun getData(word:String){
         CoroutineScope(Dispatchers.IO).launch {
             val response = RetrofitInstance.api.getWord(word)
@@ -161,12 +158,10 @@ class MainActivity : AppCompatActivity() {
                         val responseBody = response.body()!!.listIterator()
                         val next = responseBody.next()
 
-
-
                         openDetailWordPage(Word(
                             R.mipmap.ic_launcher,
                             word,
-                            PapagoTranslate(word,"ko", "en"),
+                            TranslateTask(word),
                             "example",
                             "https://api.dictionaryapi.dev/media/pronunciations/en/$word-us.mp3",
                             listOf(),
@@ -191,25 +186,47 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private fun PapagoTranslate(word: String, source: String, target: String): String {
-        val client_id = "ryX3lv0VHFu2s_Ci1jMl"
-        val client_secret = "6vbpG8mH1y"
+    private fun TranslateTask(word: String): String {
 
-        val apiUrl = "https://openapi.naver.com/v1/papago/n2mt"
+        val CLIENT_ID = "U3RduiCODnGBsgFtisU9"
+        val CLIENT_SECRET = "mKWeLOuACH"
+        val BASE_URL_NAVER_API = "https://openapi.naver.com/"
 
-        try {
-            URLEncoder.encode(word, "UTF-8")
-        }catch (e: UnsupportedEncodingException){
-            throw RuntimeException("인코딩 실패", e)
-        }
+        val retrofit = Retrofit.Builder()
+            .baseUrl(BASE_URL_NAVER_API)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+        val api = retrofit.create(NaverAPI::class.java)
 
-        val requestHeaders: MutableMap<String, String> = HashMap()
-        requestHeaders["X-Naver-Client-Id"] = client_id
-        requestHeaders["X-Naver-Client-Secret"] = client_secret
+        val wd = word
 
-        // 기타 구현
-        var translatedText: String = "한글 뜻"
-        return translatedText
+        val callPostTransferPapago = api.transferPapago(CLIENT_ID, CLIENT_SECRET,
+            "en", "ko", wd)
+
+        var result = ""
+
+        callPostTransferPapago.enqueue(object : Callback<ResultTransferPapago> {
+            override fun onResponse(
+                call: Call<ResultTransferPapago>,
+                response: Response<ResultTransferPapago>
+            ) {
+                Log.d("TAG", "성공 : ${response.raw()}")
+                result = "뜻:" + response.message()
+            }
+
+            override fun onFailure(call: Call<ResultTransferPapago>, t: Throwable) {
+                Log.d("TAG", "실패 : $t")
+                result = "번역 실패"
+            }
+        })
+
+        return result
+    }
+
+    private fun openDetailWordPage(word: Word) {
+        val intent = Intent(this, WordDetailActivity::class.java)
+        intent.putExtra("data", word)
+        startActivity(intent)
     }
 
     private fun checkInternetConnection(context: Context):Boolean{

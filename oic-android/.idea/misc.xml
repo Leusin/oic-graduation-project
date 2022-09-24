@@ -6,6 +6,7 @@
         <entry key="..\:/Documents/oic-graduation-project/oic-android/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.215" />
         <entry key="..\:/Documents/oic-graduation-project/oic-android/app/src/main/res/drawable-v24/news_avd_anim.xml" value="0.215" />
         <entry key="..\:/Documents/oic-graduation-project/oic-android/app/src/main/res/drawable/ic_baseline_camera_alt_24.xml" value="0.215" />
+        <entry key="..\:/Documents/oic-graduation-project/oic-android/app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.2185" />
         <entry key="..\:/Documents/oic-graduation-project/oic-android/app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.215" />
         <entry key="..\:/Documents/oic-graduation-project/oic-android/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.215" />
         <entry key="..\:/Documents/oic-graduation-project/oic-android/app/src/main/res/drawable/ic_launcher_background.xml" value="0.215" />
@@ -17,11 +18,13 @@
         <entry key="..\:/Documents/oic-graduation-project/oic-android/app/src/main/res/layout-w1240dp/activity_login.xml" value="0.2352744310575636" />
         <entry key="..\:/Documents/oic-graduation-project/oic-android/app/src/main/res/layout-w936dp/activity_login.xml" value="0.27049180327868855" />
         <entry key="..\:/Documents/oic-graduation-project/oic-android/app/src/main/res/layout/activity_detail_word.xml" value="0.4682814302191465" />
+        <entry key="..\:/Documents/oic-graduation-project/oic-android/app/src/main/res/layout/activity_image_view.xml" value="0.21145833333333333" />
         <entry key="..\:/Documents/oic-graduation-project/oic-android/app/src/main/res/layout/activity_login.xml" value="0.33" />
         <entry key="..\:/Documents/oic-graduation-project/oic-android/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Documents/oic-graduation-project/oic-android/app/src/main/res/layout/activity_sign_in.xml" value="0.358695652173913" />
         <entry key="..\:/Documents/oic-graduation-project/oic-android/app/src/main/res/layout/activity_splash.xml" value="0.11119554204660588" />
         <entry key="..\:/Documents/oic-graduation-project/oic-android/app/src/main/res/layout/activity_word.xml" value="0.36614583333333334" />
+        <entry key="..\:/Documents/oic-graduation-project/oic-android/app/src/main/res/layout/camera_shutter.xml" value="0.19114583333333332" />
         <entry key="..\:/Documents/oic-graduation-project/oic-android/app/src/main/res/layout/drawable_let_image_customise.xml" value="0.358695652173913" />
         <entry key="..\:/Documents/oic-graduation-project/oic-android/app/src/main/res/layout/fragment_account.xml" value="0.22" />
         <entry key="..\:/Documents/oic-graduation-project/oic-android/app/src/main/res/layout/fragment_dashboard.xml" value="0.358695652173913" />

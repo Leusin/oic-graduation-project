@@ -1,4 +1,4 @@
-package com.project.oic_android
+package com.project.oic_android.ui.note
 
 import android.media.AudioAttributes
 import android.media.MediaPlayer
