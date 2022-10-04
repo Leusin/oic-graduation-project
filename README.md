@@ -155,7 +155,14 @@ https://itstudy-mary.tistory.com/361
 https://github.com/littlemary1379/RandomColorChart/blob/master/app/src/main/java/com/mary/kotlinprojectstudy/camera/CameraActivity.kt
 
 ### 촬영 이미지 전송
-https://onedaycodeing.tistory.com/168
+https://no-dev-nk.tistory.com/81
+1. 절대경로 uri 를 가지고 파일을 만든다.
+2. (생략가능) 파일 이름을 정해준다.
+3. RequestBody를 만들어 준다  mediatype는 이미지로..
+4. 멀티파츠 바디를 만들어준다
+5. 레트로핏 빌더 생성
+6. 인터페이스를 레트로핏에 적용
+7. 인터페이스에서 사용할 메소드를 호출하면서 실행
 
 ### 하단 네비게이션
 https://www.youtube.com/watch?v=Chso6xrJ6aU&ab_channel=Stevdza-San

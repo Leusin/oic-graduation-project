@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.note.WordDetailActivity">
+    tools:context=".WordDetailActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -62,11 +62,11 @@
 
                 <ImageView
                     android:id="@+id/audio"
-                    android:layout_width="30sp"
-                    android:layout_height="30sp"
+                    android:layout_width="36sp"
+                    android:layout_height="36sp"
                     android:layout_gravity="center_vertical"
-                    android:layout_marginEnd="12dp"
-                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="14dp"
+                    android:foregroundGravity="center"
                     android:src="@drawable/ic_baseline_volume_up_24"
                     app:tint="@color/purple_500" />
 
@@ -85,11 +85,11 @@
                     android:layout_weight="1" />
 
                 <ImageView
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
+                    android:id="@+id/book_mark_icon"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
                     android:layout_gravity="center_vertical"
-                    android:src="@drawable/ic_baseline_bookmark_border_24"
-                    app:tint="#999999" />
+                    android:src="@drawable/ic_baseline_bookmark_border_24"/>
 
             </LinearLayout>
 

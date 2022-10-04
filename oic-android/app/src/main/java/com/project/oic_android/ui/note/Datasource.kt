@@ -8,10 +8,10 @@ class Datasource {
     val words : MutableList<Word> = mutableListOf<Word>(
         Word(
             R.mipmap.ic_launcher,
-            "apple",
-            "사과",
-            "big apple",
-            "https://api.dictionaryapi.dev/media/pronunciations/en/apple-us.mp3",
+            "cup",
+            "컵",
+            "",
+            "https://api.dictionaryapi.dev/media/pronunciations/en/cup-us.mp3",
             listOf(),
             listOf()
         ),

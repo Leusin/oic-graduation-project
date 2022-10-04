@@ -47,7 +47,7 @@ class LoginActivity : AppCompatActivity() {
         binding.loginGoogle.setOnClickListener {
             val gso = GoogleSignInOptions
                 .Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestIdToken(getString(R.string.default_web_client_id))
+                .requestIdToken(getString(R.string.default_web_client_id))  // 오류 표시 문시바람 실행 시 별 문제 없음
                 .requestEmail()
                 .build()
             val signInIntent = GoogleSignIn.getClient(this, gso).signInIntent
@@ -86,10 +86,7 @@ class LoginActivity : AppCompatActivity() {
                             AuthApplication.email = email; changeVisibility("이메일")
                             val intent = Intent(this, MainActivity::class.java)
                         }
-                        else {Toast.makeText(baseContext, "인증 메일을 확인해 주세요", Toast.LENGTH_SHORT).show()}
-                    }
-                    else {
-                        Toast.makeText(baseContext, "로그인 실패", Toast.LENGTH_SHORT).show()
+                        else { Toast.makeText(baseContext, "인증 메일을 확인해 주세요", Toast.LENGTH_SHORT).show() }
                     }
                 }
         }

@@ -53,7 +53,7 @@
             android:ems="10"
             android:gravity="center_horizontal"
             android:inputType="date"
-            android:text="2022. 11. 11"
+            android:text="2022. 09. 25"
             android:textColor="#707070"
             android:textSize="14sp"
             app:layout_constraintBottom_toTopOf="@+id/line1"

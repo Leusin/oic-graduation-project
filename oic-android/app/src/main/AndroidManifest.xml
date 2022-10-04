@@ -23,7 +23,7 @@
             android:name=".ui.search.ImageViewActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.note.WordDetailActivity"
+            android:name=".WordDetailActivity"
             android:exported="false" />
         <activity
             android:name=".login.LoginActivity"

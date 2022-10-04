@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.project.oic_android.WordDetailActivity
 import com.project.oic_android.adapters.ItemAdapter
 import com.project.oic_android.databinding.FragmentNoteBinding
 import com.project.oic_android.modelData.Word

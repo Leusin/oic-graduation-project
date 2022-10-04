@@ -21,7 +21,6 @@ import com.project.oic_android.retrofit.NaverAPI
 import com.project.oic_android.modelData.ResultTransferPapago
 import com.project.oic_android.modelData.Word
 import com.project.oic_android.retrofit.RetrofitInstance
-import com.project.oic_android.ui.note.WordDetailActivity
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -45,12 +44,10 @@ class MainActivity : AppCompatActivity() {
         val navController = findNavController(nav_host_fragment_activity_main)
         navView.setupWithNavController(navController)
         supportFragmentManager.beginTransaction()
-        // 유저 로그인 정보 전달
-        getUserData()
-        // toolbar 변환
-        InitNavigationUI()
-        // 검색창
-        SearchView()
+
+        getUserData() // 유저 로그인 정보 전달
+        InitNavigationUI() // toolbar 변환
+        SearchView() // 검색창
         // 검색 기능
         if (checkInternetConnection(this)) {
             postData()
