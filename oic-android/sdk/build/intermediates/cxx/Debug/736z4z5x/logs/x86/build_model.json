@@ -1,14 +1,14 @@
 {
-  "abi": "X86_64",
+  "abi": "X86",
   "info": {
-    "abi": "X86_64",
-    "bitness": 64,
+    "abi": "X86",
+    "bitness": 32,
     "deprecated": false,
     "default": true
   },
-  "cxxBuildFolder": "D:\\Documents\\oic-graduation-project\\oic-android\\sdk\\.cxx\\Debug\\665xz721\\x86_64",
-  "soFolder": "D:\\Documents\\oic-graduation-project\\oic-android\\sdk\\build\\intermediates\\cxx\\Debug\\665xz721\\obj\\x86_64",
-  "soRepublishFolder": "D:\\Documents\\oic-graduation-project\\oic-android\\sdk\\build\\intermediates\\cmake\\debug\\obj\\x86_64",
+  "cxxBuildFolder": "D:\\Documents\\oic-graduation-project\\oic-android\\sdk\\.cxx\\Debug\\736z4z5x\\x86",
+  "soFolder": "D:\\Documents\\oic-graduation-project\\oic-android\\sdk\\build\\intermediates\\cxx\\Debug\\736z4z5x\\obj\\x86",
+  "soRepublishFolder": "D:\\Documents\\oic-graduation-project\\oic-android\\sdk\\build\\intermediates\\cmake\\debug\\obj\\x86",
   "abiPlatformVersion": 21,
   "cmake": {
     "effectiveConfiguration": {
@@ -25,6 +25,9 @@
     "variantName": "debug",
     "isDebuggableEnabled": true,
     "validAbiList": [
+      "ARMEABI_V7A",
+      "ARM64_V8A",
+      "X86",
       "X86_64"
     ],
     "buildTargetSet": [
@@ -41,8 +44,8 @@
       "moduleBuildFile": "D:\\Documents\\oic-graduation-project\\oic-android\\sdk\\build.gradle",
       "makeFile": "D:\\Documents\\oic-graduation-project\\oic-android\\sdk\\libcxx_helper\\CMakeLists.txt",
       "buildSystem": "CMAKE",
-      "ndkFolder": "C:\\Users\\user\\AppData\\Local\\Android\\Sdk\\ndk\\21.4.7075529",
-      "ndkVersion": "21.4.7075529",
+      "ndkFolder": "C:\\Users\\user\\AppData\\Local\\Android\\Sdk\\ndk\\23.1.7779620",
+      "ndkVersion": "23.1.7779620",
       "ndkSupportedAbiList": [
         "ARMEABI_V7A",
         "ARM64_V8A",
@@ -58,7 +61,7 @@
       "ndkDefaultStl": "LIBCXX_STATIC",
       "ndkMetaPlatforms": {
         "min": 16,
-        "max": 30,
+        "max": 31,
         "aliases": {
           "20": 19,
           "25": 24,
@@ -75,7 +78,8 @@
           "O-MR1": 27,
           "P": 28,
           "Q": 29,
-          "R": 30
+          "R": 30,
+          "S": 31
         }
       },
       "ndkMetaAbiList": [
@@ -104,7 +108,7 @@
           "default": true
         }
       ],
-      "cmakeToolchainFile": "C:\\Users\\user\\AppData\\Local\\Android\\Sdk\\ndk\\21.4.7075529\\build\\cmake\\android.toolchain.cmake",
+      "cmakeToolchainFile": "C:\\Users\\user\\AppData\\Local\\Android\\Sdk\\ndk\\23.1.7779620\\build\\cmake\\android.toolchain.cmake",
       "cmake": {
         "isValidCmakeAvailable": true,
         "cmakeExe": "C:\\Users\\user\\AppData\\Local\\Android\\Sdk\\cmake\\3.18.1\\bin\\cmake.exe",
@@ -112,10 +116,10 @@
       },
       "stlSharedObjectMap": {
         "LIBCXX_SHARED": {
-          "ARMEABI_V7A": "C:\\Users\\user\\AppData\\Local\\Android\\Sdk\\ndk\\21.4.7075529\\toolchains\\llvm\\prebuilt\\windows-x86_64\\sysroot\\usr\\lib\\arm-linux-androideabi\\libc++_shared.so",
-          "ARM64_V8A": "C:\\Users\\user\\AppData\\Local\\Android\\Sdk\\ndk\\21.4.7075529\\toolchains\\llvm\\prebuilt\\windows-x86_64\\sysroot\\usr\\lib\\aarch64-linux-android\\libc++_shared.so",
-          "X86": "C:\\Users\\user\\AppData\\Local\\Android\\Sdk\\ndk\\21.4.7075529\\toolchains\\llvm\\prebuilt\\windows-x86_64\\sysroot\\usr\\lib\\i686-linux-android\\libc++_shared.so",
-          "X86_64": "C:\\Users\\user\\AppData\\Local\\Android\\Sdk\\ndk\\21.4.7075529\\toolchains\\llvm\\prebuilt\\windows-x86_64\\sysroot\\usr\\lib\\x86_64-linux-android\\libc++_shared.so"
+          "ARMEABI_V7A": "C:\\Users\\user\\AppData\\Local\\Android\\Sdk\\ndk\\23.1.7779620\\toolchains\\llvm\\prebuilt\\windows-x86_64\\sysroot\\usr\\lib\\arm-linux-androideabi\\libc++_shared.so",
+          "ARM64_V8A": "C:\\Users\\user\\AppData\\Local\\Android\\Sdk\\ndk\\23.1.7779620\\toolchains\\llvm\\prebuilt\\windows-x86_64\\sysroot\\usr\\lib\\aarch64-linux-android\\libc++_shared.so",
+          "X86": "C:\\Users\\user\\AppData\\Local\\Android\\Sdk\\ndk\\23.1.7779620\\toolchains\\llvm\\prebuilt\\windows-x86_64\\sysroot\\usr\\lib\\i686-linux-android\\libc++_shared.so",
+          "X86_64": "C:\\Users\\user\\AppData\\Local\\Android\\Sdk\\ndk\\23.1.7779620\\toolchains\\llvm\\prebuilt\\windows-x86_64\\sysroot\\usr\\lib\\x86_64-linux-android\\libc++_shared.so"
         },
         "LIBCXX_STATIC": {},
         "NONE": {},
@@ -125,7 +129,6 @@
         "rootBuildGradleFolder": "D:\\Documents\\oic-graduation-project\\oic-android",
         "sdkFolder": "C:\\Users\\user\\AppData\\Local\\Android\\Sdk",
         "isBuildOnlyTargetAbiEnabled": true,
-        "ideBuildTargetAbi": "x86_64,x86",
         "isCmakeBuildCohabitationEnabled": false,
         "isPrefabEnabled": false
       },
@@ -141,28 +144,28 @@
   "buildSettings": {
     "environmentVariables": []
   },
-  "prefabFolder": "D:\\Documents\\oic-graduation-project\\oic-android\\sdk\\.cxx\\Debug\\665xz721\\prefab\\x86_64",
+  "prefabFolder": "D:\\Documents\\oic-graduation-project\\oic-android\\sdk\\.cxx\\Debug\\736z4z5x\\prefab\\x86",
   "isActiveAbi": true,
-  "fullConfigurationHash": "665xz721o1o1t03d6p1n665a5653574i6x21v1sl652j5p662kq2s6l2n8",
+  "fullConfigurationHash": "736z4z5x2f1m25qh275a1k1w2b5s246y2c5m85b4g5y2u1w3lw3l6m4u5m2f",
   "configurationArguments": [
     "-HD:\\Documents\\oic-graduation-project\\oic-android\\sdk\\libcxx_helper",
     "-DCMAKE_SYSTEM_NAME\u003dAndroid",
     "-DCMAKE_EXPORT_COMPILE_COMMANDS\u003dON",
     "-DCMAKE_SYSTEM_VERSION\u003d21",
     "-DANDROID_PLATFORM\u003dandroid-21",
-    "-DANDROID_ABI\u003dx86_64",
-    "-DCMAKE_ANDROID_ARCH_ABI\u003dx86_64",
-    "-DANDROID_NDK\u003dC:\\Users\\user\\AppData\\Local\\Android\\Sdk\\ndk\\21.4.7075529",
-    "-DCMAKE_ANDROID_NDK\u003dC:\\Users\\user\\AppData\\Local\\Android\\Sdk\\ndk\\21.4.7075529",
-    "-DCMAKE_TOOLCHAIN_FILE\u003dC:\\Users\\user\\AppData\\Local\\Android\\Sdk\\ndk\\21.4.7075529\\build\\cmake\\android.toolchain.cmake",
+    "-DANDROID_ABI\u003dx86",
+    "-DCMAKE_ANDROID_ARCH_ABI\u003dx86",
+    "-DANDROID_NDK\u003dC:\\Users\\user\\AppData\\Local\\Android\\Sdk\\ndk\\23.1.7779620",
+    "-DCMAKE_ANDROID_NDK\u003dC:\\Users\\user\\AppData\\Local\\Android\\Sdk\\ndk\\23.1.7779620",
+    "-DCMAKE_TOOLCHAIN_FILE\u003dC:\\Users\\user\\AppData\\Local\\Android\\Sdk\\ndk\\23.1.7779620\\build\\cmake\\android.toolchain.cmake",
     "-DCMAKE_MAKE_PROGRAM\u003dC:\\Users\\user\\AppData\\Local\\Android\\Sdk\\cmake\\3.18.1\\bin\\ninja.exe",
-    "-DCMAKE_LIBRARY_OUTPUT_DIRECTORY\u003dD:\\Documents\\oic-graduation-project\\oic-android\\sdk\\build\\intermediates\\cxx\\Debug\\665xz721\\obj\\x86_64",
-    "-DCMAKE_RUNTIME_OUTPUT_DIRECTORY\u003dD:\\Documents\\oic-graduation-project\\oic-android\\sdk\\build\\intermediates\\cxx\\Debug\\665xz721\\obj\\x86_64",
+    "-DCMAKE_LIBRARY_OUTPUT_DIRECTORY\u003dD:\\Documents\\oic-graduation-project\\oic-android\\sdk\\build\\intermediates\\cxx\\Debug\\736z4z5x\\obj\\x86",
+    "-DCMAKE_RUNTIME_OUTPUT_DIRECTORY\u003dD:\\Documents\\oic-graduation-project\\oic-android\\sdk\\build\\intermediates\\cxx\\Debug\\736z4z5x\\obj\\x86",
     "-DCMAKE_BUILD_TYPE\u003dDebug",
-    "-BD:\\Documents\\oic-graduation-project\\oic-android\\sdk\\.cxx\\Debug\\665xz721\\x86_64",
+    "-BD:\\Documents\\oic-graduation-project\\oic-android\\sdk\\.cxx\\Debug\\736z4z5x\\x86",
     "-GNinja",
     "-DANDROID_STL\u003dc++_shared"
   ],
-  "stlLibraryFile": "C:\\Users\\user\\AppData\\Local\\Android\\Sdk\\ndk\\21.4.7075529\\toolchains\\llvm\\prebuilt\\windows-x86_64\\sysroot\\usr\\lib\\x86_64-linux-android\\libc++_shared.so",
-  "intermediatesParentFolder": "D:\\Documents\\oic-graduation-project\\oic-android\\sdk\\build\\intermediates\\cxx\\Debug\\665xz721"
+  "stlLibraryFile": "C:\\Users\\user\\AppData\\Local\\Android\\Sdk\\ndk\\23.1.7779620\\toolchains\\llvm\\prebuilt\\windows-x86_64\\sysroot\\usr\\lib\\i686-linux-android\\libc++_shared.so",
+  "intermediatesParentFolder": "D:\\Documents\\oic-graduation-project\\oic-android\\sdk\\build\\intermediates\\cxx\\Debug\\736z4z5x"
 }
