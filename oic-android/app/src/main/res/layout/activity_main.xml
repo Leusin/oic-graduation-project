@@ -9,9 +9,9 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/lightblue"
+        android:background="@color/darkblue"
         android:elevation="4dp"
-        android:paddingStart="24dp"
+        android:paddingStart="20dp"
         android:theme="@style/Toolbar"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent" >
@@ -35,8 +35,8 @@
                     android:layout_marginStart="24dp"
                     android:text="@string/title_search"
                     android:fontFamily="@font/kotra"
-                    android:textColor="#FFFFFF"
-                    android:textSize="18sp"
+                    android:textColor="@color/lightblue"
+                    android:textSize="25sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -45,6 +45,7 @@
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     android:layout_weight="1" />
+
                 <TextView
                     android:id="@+id/order_set"
                     android:layout_width="wrap_content"
@@ -55,11 +56,12 @@
                     android:textColor="#FFFFFF"
                     android:textSize="18sp"
                     android:textStyle="normal"
-                    android:text="@string/toolbar_order"
                     android:fontFamily="@font/kotra"
                     android:entries="@array/order"
                     app:tint="@color/white"
                     android:visibility="visible"/>
+                    <!--                    android:text="정렬"-->
+
             </LinearLayout>
 
             <androidx.appcompat.widget.SearchView
@@ -81,7 +83,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="0dp"
         android:layout_marginEnd="0dp"
-        android:background="@color/lightblue"
+        android:background="@color/darkblue"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"

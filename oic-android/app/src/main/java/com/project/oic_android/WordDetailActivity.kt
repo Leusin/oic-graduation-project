@@ -63,8 +63,12 @@ class WordDetailActivity : AppCompatActivity() {
             }catch (e:Exception){ }
         }
 
-        binding.example.text = "예제 : " + datas.example
-        binding.syno.text = "동의어 : " + datas.syno.toString()
-        binding.anto.text = "반의어 : " + datas.anto.toString()
+//        binding.example.text = "예제 : " + datas.example
+ //       binding.syno.text = "동의어 : " + datas.syno.toString()
+     //   binding.anto.text = "반의어 : " + datas.anto.toString()
+
+        binding.example.text = "예제"
+        binding.syno.text = "동의어"
+        binding.anto.text = "반의어"
     }
 }

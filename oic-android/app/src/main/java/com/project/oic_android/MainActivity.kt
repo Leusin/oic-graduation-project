@@ -108,7 +108,7 @@ class MainActivity : AppCompatActivity() {
 
             when (destination.id) {
                 navigation_search -> {
-                    binding.toolbarTitle.text = "단어장"; binding.searchView.visibility =
+                    binding.toolbarTitle.text = "단어학습"; binding.searchView.visibility =
                         View.VISIBLE; binding.orderSet.visibility = View.GONE
                 }
                 navigation_note -> {

@@ -58,9 +58,11 @@ class LoginActivity : AppCompatActivity() {
         binding.actionJoinIn.setOnClickListener {
             val email = binding.usernameJoin.text.toString()
             val password = binding.passwordJoin.text.toString()
+            val passwordCk = binding.passwordJoinCheck.text.toString()
             AuthApplication.auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this) { task ->
                 binding.usernameJoin.text.clear()
                 binding.passwordJoin.text.clear()
+                binding.passwordJoinCheck.text.clear()
                 if(task.isSuccessful) {
                     AuthApplication.auth.currentUser?.sendEmailVerification()?.addOnCompleteListener{ sendTask ->
                         if (sendTask.isSuccessful) { Toast.makeText(baseContext, "$email 로 인증 메일 전송", Toast.LENGTH_SHORT).show(); changeVisibility("logout") }
@@ -118,6 +120,7 @@ class LoginActivity : AppCompatActivity() {
                 greet.visibility = GONE
                 usernameJoin.visibility = GONE
                 passwordJoin.visibility = GONE
+                passwordJoinCheck.visibility = GONE
                 actionJoinIn.visibility = GONE
 
                 toolbarTitle.text = "로그인"
@@ -137,6 +140,7 @@ class LoginActivity : AppCompatActivity() {
                 greet.visibility = VISIBLE
                 usernameJoin.visibility = VISIBLE
                 passwordJoin.visibility = VISIBLE
+                passwordJoinCheck.visibility = VISIBLE
                 actionJoinIn.visibility = VISIBLE
 
                 toolbarTitle.text = "회원가입"

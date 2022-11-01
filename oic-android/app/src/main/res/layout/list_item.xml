@@ -64,6 +64,7 @@ android:layout_width="0dp"
         android:text="@{item.mean}"
         android:textColor="@color/black"
         android:textSize="25dp"
+        android:textAlignment="center"
         android:fontFamily="@font/kotra"
         app:layout_constraintHorizontal_bias=".0"
         app:layout_constraintStart_toEndOf="@id/word_en" />

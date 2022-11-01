@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/toolbar"
-        android:background="@color/lightblue"
+        android:background="@color/darkblue"
         android:elevation="4dp"
         android:paddingStart="24dp"
         android:theme="@style/Toolbar"
@@ -31,7 +31,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/toolbar_title"
             android:text="@string/action_login"
-            android:textColor="@color/icon_color"
+            android:textColor="@color/lightblue"
             android:fontFamily="@font/kotra"
             android:textSize="25sp"
             android:textStyle="bold"/>
@@ -54,11 +54,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar"/>
+
     <EditText
         android:id="@+id/username"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="20dp"
         android:layout_marginLeft="36dp"
         android:layout_marginRight="36dp"
         android:background="@drawable/shape_radius_8"
@@ -91,7 +92,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/username" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/login"
         android:layout_width="match_parent"
         android:layout_height="48dp"
@@ -105,18 +106,33 @@
         android:textStyle="bold"
         android:text="로그인"
         android:fontFamily="@font/kotra"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/password" />
 
     <TextView
-        android:id="@+id/joinin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="@string/join_in"
         android:fontFamily="@font/kotra"
         android:padding="4dp"
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login" />
+
+    <TextView
+        android:id="@+id/joinin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="회원가입"
+        android:textColor="@color/darkblue"
+        android:fontFamily="@font/kotra"
+        android:padding="4dp"
+        android:textSize="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/login" />
@@ -182,16 +198,16 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="36dp"
-        android:layout_marginTop="?attr/actionBarSize"
+        android:layout_marginTop="80dp"
         android:layout_marginRight="36dp"
-        android:layout_marginBottom="32dp"
         android:paddingTop="24dp"
         android:paddingBottom="24dp"
         android:fontFamily="@font/kotra"
-        android:gravity="left"
+        android:gravity="center"
         android:text="@string/greet_text"
-        android:textColor="@color/purple_500"
-        android:textSize="28sp"
+        android:textSize="30sp"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        android:textColor="@color/darkblue"
         app:layout_constraintBottom_toTopOf="@+id/username_join"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -237,20 +253,41 @@
         app:layout_constraintTop_toBottomOf="@+id/username_join"
         android:visibility="gone"/>
 
-    <Button
+    <EditText
+        android:id="@+id/password_join_check"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginRight="36dp"
+        android:background="@drawable/shape_radius_8"
+        android:backgroundTint="@color/white"
+        android:padding="12dp"
+        android:hint="비밀번호를 재입력해주세요"
+        android:fontFamily="@font/kotra"
+        android:imeOptions="actionDone"
+        android:inputType="textPassword"
+        android:selectAllOnFocus="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/password_join"
+        android:visibility="gone"/>
+
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/action_join_in"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_gravity="start"
         android:layout_marginLeft="36dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="70dp"
         android:layout_marginRight="36dp"
         android:background="@drawable/shape_radius_8"
-        android:backgroundTint="@color/lightblue"
-        android:textSize="16sp"
+        android:backgroundTint="@color/darkblue"
+        android:textSize="25sp"
         android:textStyle="bold"
         android:text="@string/action_joinin"
         android:fontFamily="@font/kotra"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/password_join"
