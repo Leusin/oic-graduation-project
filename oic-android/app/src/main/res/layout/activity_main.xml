@@ -72,7 +72,8 @@
                 android:background="@drawable/shape_radius_50"
                 android:theme="@style/SearchView"
                 app:iconifiedByDefault="false"
-                app:queryHint="사전 검색" />
+                app:queryHint="사전 검색"
+                />
         </LinearLayout>
 
     </androidx.appcompat.widget.Toolbar>

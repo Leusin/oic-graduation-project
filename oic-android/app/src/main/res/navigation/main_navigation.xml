@@ -12,6 +12,12 @@
         tools:layout="@layout/fragment_search" />
 
     <fragment
+        android:id="@+id/navigation_ar"
+        android:name="com.project.oic_android.ui.ar.ARFragment"
+        android:label="AR"
+        tools:layout="@layout/fragment_ar" />
+
+    <fragment
         android:id="@+id/navigation_note"
         android:name="com.project.oic_android.ui.note.NoteFragment"
         android:label="@string/title_note"
