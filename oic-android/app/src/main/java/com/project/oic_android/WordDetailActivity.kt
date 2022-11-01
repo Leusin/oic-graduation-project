@@ -48,7 +48,7 @@ class WordDetailActivity : AppCompatActivity() {
     private fun GetWordData() {
         datas = intent.getSerializableExtra("data") as Word
 
-        Glide.with(this).load(datas.img).into(binding.imageView)
+        //Glide.with(this).load(datas.img).into(binding.imageView)
         binding.wordEn.text = datas.word_eng
         binding.wordKr.text = datas.word_kor
 

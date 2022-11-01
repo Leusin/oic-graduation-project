@@ -3,8 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-
+    android:layout_height="100dp">
+<!--
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="80dp"
@@ -13,24 +13,36 @@
         android:src="@mipmap/ic_launcher"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
+        app:layout_constraintTop_toTopOf="parent" /> -->
+    <!--
+    android:layout_marginStart="16dp"
+    android:layout_marginTop="8dp"
+    android:text="TextView"
+    android:textColor="#191919"
+    android:textSize="24sp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toEndOf="@+id/imageView"
+    app:layout_constraintTop_toTopOf="parent"
+    -->
     <TextView
         android:id="@+id/word_en"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:text="TextView"
-        android:textColor="#191919"
-        android:textSize="24sp"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:lines="1"
+        android:paddingStart="5dp"
+        android:paddingEnd="5dp"
+        android:text="@{item.word}"
+        android:textColor="@color/black"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:fontFamily="@font/kotra"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/word_kr"
-        android:layout_width="0dp"
+        app:layout_constraintHorizontal_bias=".0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintWidth_percent=".3" />
+<!--
+android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
@@ -39,5 +51,21 @@
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/word_en" />
+        app:layout_constraintTop_toBottomOf="@+id/word_en" -->
+
+    <TextView
+        android:id="@+id/word_kr"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:lines="1"
+        android:paddingStart="5dp"
+        android:paddingEnd="5dp"
+        android:text="@{item.mean}"
+        android:textColor="@color/black"
+        android:textSize="25dp"
+        android:fontFamily="@font/kotra"
+        app:layout_constraintHorizontal_bias=".0"
+        app:layout_constraintStart_toEndOf="@id/word_en" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

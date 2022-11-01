@@ -25,10 +25,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginBottom="32dp"
-        android:fontFamily="@font/notosans_kr_regular"
+        android:fontFamily="@font/kotra"
         android:gravity="center"
         android:textColor="#191919"
-        android:textSize="18sp" />
+        android:textSize="30sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -43,13 +43,17 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/cancel"
+            android:text="취소"
+            android:textSize="20dp"
+            android:fontFamily="@font/kotra"
             android:layout_marginEnd="8dp"/>
         <Button
             android:id="@+id/logout_ok"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:textSize="20dp"
+            android:fontFamily="@font/kotra"
             android:layout_marginStart="8dp"/>
     </LinearLayout>
 </androidx.cardview.widget.CardView>

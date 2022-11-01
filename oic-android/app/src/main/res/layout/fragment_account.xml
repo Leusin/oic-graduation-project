@@ -42,6 +42,7 @@
             android:text="가입일자"
             android:textColor="#999999"
             android:textSize="12dp"
+            android:fontFamily="@font/kotra"
             app:layout_constraintBottom_toTopOf="@+id/line1"
             app:layout_constraintStart_toStartOf="parent" />
 
@@ -56,6 +57,7 @@
             android:text="2022. 09. 25"
             android:textColor="#707070"
             android:textSize="14sp"
+            android:fontFamily="@font/kotra"
             app:layout_constraintBottom_toTopOf="@+id/line1"
             app:layout_constraintEnd_toEndOf="@+id/line1"
             app:layout_constraintStart_toStartOf="@+id/line1" />
@@ -77,6 +79,7 @@
             android:text="가입방법"
             android:textColor="#999999"
             android:textSize="12dp"
+            android:fontFamily="@font/kotra"
             app:layout_constraintBottom_toTopOf="@+id/line2"
             app:layout_constraintStart_toStartOf="parent" />
 
@@ -90,6 +93,7 @@
             android:text="이메일로 가입"
             android:textColor="#707070"
             android:textSize="14sp"
+            android:fontFamily="@font/kotra"
             app:layout_constraintBottom_toTopOf="@+id/line2"
             app:layout_constraintEnd_toEndOf="@+id/line2"
             app:layout_constraintStart_toStartOf="@+id/line2" />
@@ -111,6 +115,7 @@
             android:text="아이디"
             android:textColor="#999999"
             android:textSize="12dp"
+            android:fontFamily="@font/kotra"
             app:layout_constraintBottom_toTopOf="@+id/line3"
             app:layout_constraintStart_toStartOf="parent" />
 
@@ -124,6 +129,7 @@
             android:text="OIC_2022@duksung.ac.kr"
             android:textColor="#707070"
             android:textSize="14sp"
+            android:fontFamily="@font/kotra"
             app:layout_constraintBottom_toTopOf="@+id/line3"
             app:layout_constraintEnd_toEndOf="@+id/line3"
             app:layout_constraintStart_toStartOf="@+id/line3" />
@@ -146,6 +152,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/line3" />
+
+
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/logout"
             android:layout_width="match_parent"
@@ -155,6 +163,7 @@
             android:text="@string/account_logout"
             android:textSize="14sp"
             android:elevation="0dp"
+            android:fontFamily="@font/kotra"
             app:layout_constraintBottom_toTopOf="@+id/withdraw"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
@@ -169,6 +178,7 @@
             android:text="@string/account_withdraw"
             android:textSize="14sp"
             android:elevation="0dp"
+            android:fontFamily="@font/kotra"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />

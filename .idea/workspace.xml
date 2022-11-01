@@ -4,14 +4,46 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d8a5481-bbf2-4a95-9c24-7bfc956fc6b6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oic-android/sdk/build/intermediates/cxx/Debug/665xz721/meta/x86/generate_cxx_metadata_22_timing.txt" beforeDir="false" afterPath="$PROJECT_DIR$/oic-android/sdk/build/intermediates/cxx/Debug/665xz721/meta/x86/generate_cxx_metadata_22_timing.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oic-android/sdk/build/intermediates/cxx/Debug/665xz721/meta/x86/metadata_generation_record.json" beforeDir="false" afterPath="$PROJECT_DIR$/oic-android/sdk/build/intermediates/cxx/Debug/665xz721/meta/x86/metadata_generation_record.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oic-android/sdk/build/intermediates/cxx/Debug/665xz721/meta/x86_64/metadata_generation_record.json" beforeDir="false" afterPath="$PROJECT_DIR$/oic-android/sdk/build/intermediates/cxx/Debug/665xz721/meta/x86_64/metadata_generation_record.json" afterDir="false" />
+    <list default="true" id="a7b3f6e0-c549-4930-ac73-52a4e0e29446" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/oic-android/app/src/main/res/font/kotra.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oic-android/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/oic-android/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oic-android/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/oic-android/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oic-android/app/src/main/res/layout/activity_login.xml" beforeDir="false" afterPath="$PROJECT_DIR$/oic-android/app/src/main/res/layout/activity_login.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oic-android/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/oic-android/app/src/main/res/values/colors.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oic-android/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/oic-android/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oic-android/sdk/build/generated/aidl_source_output_dir/debug/out/org/opencv/engine/OpenCVEngineInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/oic-android/sdk/build/generated/aidl_source_output_dir/debug/out/org/opencv/engine/OpenCVEngineInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oic-android/sdk/build/generated/source/buildConfig/debug/org/opencv/BuildConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/oic-android/sdk/build/generated/source/buildConfig/debug/org/opencv/BuildConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oic-android/sdk/build/intermediates/aapt_friendly_merged_manifests/debug/aapt/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/oic-android/sdk/build/intermediates/aapt_friendly_merged_manifests/debug/aapt/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oic-android/sdk/build/intermediates/aapt_friendly_merged_manifests/debug/aapt/output-metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/oic-android/sdk/build/intermediates/aapt_friendly_merged_manifests/debug/aapt/output-metadata.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oic-android/sdk/build/intermediates/aar_metadata/debug/aar-metadata.properties" beforeDir="false" afterPath="$PROJECT_DIR$/oic-android/sdk/build/intermediates/aar_metadata/debug/aar-metadata.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oic-android/sdk/build/intermediates/compile_library_classes_jar/debug/classes.jar" beforeDir="false" afterPath="$PROJECT_DIR$/oic-android/sdk/build/intermediates/compile_library_classes_jar/debug/classes.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oic-android/sdk/build/intermediates/compile_r_class_jar/debug/R.jar" beforeDir="false" afterPath="$PROJECT_DIR$/oic-android/sdk/build/intermediates/compile_r_class_jar/debug/R.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oic-android/sdk/build/intermediates/compile_symbol_list/debug/R.txt" beforeDir="false" afterPath="$PROJECT_DIR$/oic-android/sdk/build/intermediates/compile_symbol_list/debug/R.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oic-android/sdk/build/intermediates/cxx/abi_configuration_3r3s5861.json" beforeDir="false" afterPath="$PROJECT_DIR$/oic-android/sdk/build/intermediates/cxx/abi_configuration_3r3s5861.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oic-android/sdk/build/intermediates/cxx/abi_configuration_3r3s5861_key.json" beforeDir="false" afterPath="$PROJECT_DIR$/oic-android/sdk/build/intermediates/cxx/abi_configuration_3r3s5861_key.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/oic-android/sdk/build/intermediates/cxx/create_cxx_tasks_22_timing.txt" beforeDir="false" afterPath="$PROJECT_DIR$/oic-android/sdk/build/intermediates/cxx/create_cxx_tasks_22_timing.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oic-android/sdk/build/intermediates/cxx/create_cxx_tasks_243_timing.txt" beforeDir="false" afterPath="$PROJECT_DIR$/oic-android/sdk/build/intermediates/cxx/create_cxx_tasks_243_timing.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oic-android/sdk/build/intermediates/cxx/ndk_locator_record_46643u2m.log" beforeDir="false" afterPath="$PROJECT_DIR$/oic-android/sdk/build/intermediates/cxx/ndk_locator_record_46643u2m.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oic-android/sdk/build/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/oic-android/sdk/build/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oic-android/sdk/build/intermediates/incremental/debug/packageDebugResources/merged.dir/values/values.xml" beforeDir="false" afterPath="$PROJECT_DIR$/oic-android/sdk/build/intermediates/incremental/debug/packageDebugResources/merged.dir/values/values.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oic-android/sdk/build/intermediates/incremental/debug/packageDebugResources/merger.xml" beforeDir="false" afterPath="$PROJECT_DIR$/oic-android/sdk/build/intermediates/incremental/debug/packageDebugResources/merger.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oic-android/sdk/build/intermediates/incremental/mergeDebugJniLibFolders/merger.xml" beforeDir="false" afterPath="$PROJECT_DIR$/oic-android/sdk/build/intermediates/incremental/mergeDebugJniLibFolders/merger.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oic-android/sdk/build/intermediates/incremental/mergeDebugShaders/merger.xml" beforeDir="false" afterPath="$PROJECT_DIR$/oic-android/sdk/build/intermediates/incremental/mergeDebugShaders/merger.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oic-android/sdk/build/intermediates/incremental/packageDebugAssets/merger.xml" beforeDir="false" afterPath="$PROJECT_DIR$/oic-android/sdk/build/intermediates/incremental/packageDebugAssets/merger.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oic-android/sdk/build/intermediates/library_jni/debug/jni/arm64-v8a/libc++_shared.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oic-android/sdk/build/intermediates/library_jni/debug/jni/armeabi-v7a/libc++_shared.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oic-android/sdk/build/intermediates/library_jni/debug/jni/x86/libc++_shared.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oic-android/sdk/build/intermediates/library_jni/debug/jni/x86_64/libc++_shared.so" beforeDir="false" afterPath="$PROJECT_DIR$/oic-android/sdk/build/intermediates/library_jni/debug/jni/x86_64/libc++_shared.so" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oic-android/sdk/build/intermediates/local_only_symbol_list/debug/R-def.txt" beforeDir="false" afterPath="$PROJECT_DIR$/oic-android/sdk/build/intermediates/local_only_symbol_list/debug/R-def.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oic-android/sdk/build/intermediates/manifest_merge_blame_file/debug/manifest-merger-blame-debug-report.txt" beforeDir="false" afterPath="$PROJECT_DIR$/oic-android/sdk/build/intermediates/manifest_merge_blame_file/debug/manifest-merger-blame-debug-report.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oic-android/sdk/build/intermediates/merged_manifest/debug/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/oic-android/sdk/build/intermediates/merged_manifest/debug/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oic-android/sdk/build/intermediates/merged_native_libs/debug/out/lib/arm64-v8a/libc++_shared.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oic-android/sdk/build/intermediates/merged_native_libs/debug/out/lib/armeabi-v7a/libc++_shared.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oic-android/sdk/build/intermediates/merged_native_libs/debug/out/lib/x86/libc++_shared.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oic-android/sdk/build/intermediates/merged_native_libs/debug/out/lib/x86_64/libc++_shared.so" beforeDir="false" afterPath="$PROJECT_DIR$/oic-android/sdk/build/intermediates/merged_native_libs/debug/out/lib/x86_64/libc++_shared.so" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oic-android/sdk/build/intermediates/packaged_manifests/debug/output-metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/oic-android/sdk/build/intermediates/packaged_manifests/debug/output-metadata.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oic-android/sdk/build/intermediates/packaged_res/debug/values/values.xml" beforeDir="false" afterPath="$PROJECT_DIR$/oic-android/sdk/build/intermediates/packaged_res/debug/values/values.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oic-android/sdk/build/intermediates/symbol_list_with_package_name/debug/package-aware-r.txt" beforeDir="false" afterPath="$PROJECT_DIR$/oic-android/sdk/build/intermediates/symbol_list_with_package_name/debug/package-aware-r.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oic-android/sdk/build/outputs/logs/manifest-merger-debug-report.txt" beforeDir="false" afterPath="$PROJECT_DIR$/oic-android/sdk/build/outputs/logs/manifest-merger-debug-report.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,7 +53,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="2GiKePYTRTk5CdXGxaN7mNZaxDa" />
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2GwDBna673eltDGcwv3nCxmKlj1" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -30,18 +65,19 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
+    <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="cidr.known.project.marker" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="MTHome" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/oic-android" />
+    <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="9d8a5481-bbf2-4a95-9c24-7bfc956fc6b6" name="Changes" comment="" />
-      <created>1666866059123</created>
+      <changelist id="a7b3f6e0-c549-4930-ac73-52a4e0e29446" name="Changes" comment="" />
+      <created>1667290620435</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1666866059123</updated>
+      <updated>1667290620435</updated>
     </task>
     <servers />
   </component>

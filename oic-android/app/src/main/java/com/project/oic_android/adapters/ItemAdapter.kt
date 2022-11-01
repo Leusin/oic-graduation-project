@@ -44,12 +44,12 @@ class ItemAdapter(
     inner class ItemViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val wordEn: TextView  = itemView.findViewById(R.id.word_en)
         val wordKr: TextView  = itemView.findViewById(R.id.word_kr)
-        val imageView: ImageView = itemView.findViewById(R.id.imageView)
+        //val imageView: ImageView = itemView.findViewById(R.id.imageView)
 
         fun bind(item: Word) {
             wordEn.text = item.word_eng
             wordKr.text = item.word_kor
-            Glide.with(itemView).load(item.img).into(imageView)
+            //Glide.with(itemView).load(item.img).into(imageView)
 
             val position = adapterPosition
             if(position != RecyclerView.NO_POSITION) {
