@@ -16,7 +16,7 @@
     </style>
     <!-- 스플래시 스크린-->
     <style name="SplashTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
-        <item name="android:windowBackground">@color/lightblue</item>
+        <item name="android:windowSplashScreenBackground">@color/lightblue</item>
         <item name="windowSplashScreenAnimatedIcon">@mipmap/ic_launcher</item>
     </style>
     <!-- 툴바 설정-->

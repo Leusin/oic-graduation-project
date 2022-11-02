@@ -29,5 +29,10 @@
         android:name="com.project.oic_android.ui.account.AccountFragment"
         android:label="@string/title_account"
         tools:layout="@layout/fragment_account" />
+    <fragment
+        android:id="@+id/navigation_ar"
+        android:name="com.project.oic_android.ui.ArFragment"
+        android:label="AR"
+        tools:layout="@layout/fragment_ar"/>
 
 </navigation>

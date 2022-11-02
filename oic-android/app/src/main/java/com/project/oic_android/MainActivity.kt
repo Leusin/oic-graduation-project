@@ -6,12 +6,15 @@ import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.os.Build
 import android.os.Bundle
+import android.provider.Settings
 import android.util.Log
 import android.view.View
+import android.view.WindowManager
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.SearchView
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -39,6 +42,14 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // 상태바 색 변경
+        if (Build.VERSION.SDK_INT >= 21) {
+            val window = this.window
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
+            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
+            window.statusBarColor = this.resources.getColor(R.color.darkblue)
+        }
+
         // 프래그먼트 화면 전환
         val navView: BottomNavigationView = binding.navView
         val navController = findNavController(nav_host_fragment_activity_main)
@@ -59,7 +70,7 @@ class MainActivity : AppCompatActivity() {
                     Dialog.dismiss()
                     postData()
                 }else{
-                    startActivity(Intent(android.provider.Settings.ACTION_DATA_ROAMING_SETTINGS))
+                    startActivity(Intent(Settings.ACTION_DATA_ROAMING_SETTINGS))
                     postData()
                 }
             }
@@ -73,7 +84,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun postData() {
-        binding.searchView.setOnQueryTextListener(object : androidx.appcompat.widget.SearchView.OnQueryTextListener {
+        binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(p0: String): Boolean {
                 val word = p0.toString()
                 if(!word.equals(null)) {
@@ -98,11 +109,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun InitNavigationUI() {
-        val navController = findNavController(R.id.nav_host_fragment_activity_main)
+        val navController = findNavController(nav_host_fragment_activity_main)
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
             title = when (destination.id) {
-                R.id.navigation_search -> "oic"
+                navigation_search -> "oic"
                 else -> "Default title"
             }
 
@@ -119,6 +130,10 @@ class MainActivity : AppCompatActivity() {
                     binding.toolbarTitle.text = "내계정"; binding.searchView.visibility =
                         View.GONE; binding.orderSet.visibility = View.GONE
                 }
+                navigation_ar -> {
+                    binding.toolbarTitle.text = "AR"; binding.searchView.visibility = View.GONE
+                    binding.orderSet.visibility = View.GONE
+                }
 
             }
         }
@@ -131,7 +146,7 @@ class MainActivity : AppCompatActivity() {
             arrayListOf("apple", "orange", "banana", "kiwifruit", "apple", "pineapple", "peach")
 
         // 자동 완성
-        val searchAutoComplete: androidx.appcompat.widget.SearchView.SearchAutoComplete =
+        val searchAutoComplete: SearchView.SearchAutoComplete =
             binding.searchView.findViewById(androidx.appcompat.R.id.search_src_text)
         searchAutoComplete.setAdapter(ArrayAdapter(this,
             android.R.layout.simple_list_item_1,
@@ -227,7 +242,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun checkInternetConnection(context: Context):Boolean{
-        val connectivityManger=context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val connectivityManger=context.getSystemService(CONNECTIVITY_SERVICE) as ConnectivityManager
         if(Build.VERSION.SDK_INT>= Build.VERSION_CODES.M){
             val network=connectivityManger.activeNetwork?:return false
             val activityNetwork=connectivityManger.getNetworkCapabilities(network)?:return false
