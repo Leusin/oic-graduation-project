@@ -1,0 +1,2 @@
+ninja: Entering directory `D:\Documents\oic-graduation-project-clone\oic-graduation-project\oic-android\sdk\.cxx\Debug\2a493h1s\arm64-v8a'
+ninja: no work to do.
