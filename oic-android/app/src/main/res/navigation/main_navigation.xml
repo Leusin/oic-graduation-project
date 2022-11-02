@@ -11,12 +11,13 @@
         android:label="@string/title_search"
         tools:layout="@layout/fragment_search" />
 
+<!-- 프래그먼트 수정 필요
     <fragment
         android:id="@+id/navigation_ar"
         android:name="com.project.oic_android.ui.ar.ARFragment"
         android:label="AR"
         tools:layout="@layout/fragment_ar" />
-
+-->
     <fragment
         android:id="@+id/navigation_note"
         android:name="com.project.oic_android.ui.note.NoteFragment"
