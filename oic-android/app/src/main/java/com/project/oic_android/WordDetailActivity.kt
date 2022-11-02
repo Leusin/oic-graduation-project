@@ -50,7 +50,8 @@ class WordDetailActivity : AppCompatActivity() {
 
         //Glide.with(this).load(datas.img).into(binding.imageView)
         binding.wordEn.text = datas.word_eng
-        binding.wordKr.text = datas.word_kor
+        binding.wordKr.text = "컵"
+//        binding.wordKr.text = datas.word_kor
 
         binding.audio.setOnClickListener {
             val media = MediaPlayer()
@@ -69,6 +70,6 @@ class WordDetailActivity : AppCompatActivity() {
 
         binding.example.text = "예제"
         binding.syno.text = "동의어"
-        binding.anto.text = "반의어"
+        //binding.anto.text = "반의어"
     }
 }

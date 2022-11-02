@@ -70,8 +70,8 @@ class Datasource {
         ),
         Word(
             R.mipmap.ic_launcher,
-            "apple",
-            "사과",
+            "happy",
+            "행복한",
             "big apple",
             "https://api.dictionaryapi.dev/media/pronunciations/en/apple-us.mp3",
             listOf(),

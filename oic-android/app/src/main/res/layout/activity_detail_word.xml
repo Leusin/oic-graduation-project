@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".WordDetailActivity">
+    tools:context=".WordDetailActivity"
+    android:background="@color/app_background" >
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -141,7 +142,7 @@
                 android:layout_marginEnd="24dp"
                 android:layout_marginBottom="20dp"
                 android:fontFamily="@font/kotra"
-                android:text="a happy smile"
+                android:text="She drank the whole cup."
                 android:textColor="#999999"
                 android:textSize="30dp"
                 android:textStyle="normal" />
@@ -168,7 +169,7 @@
                 android:layout_marginEnd="24dp"
                 android:layout_marginBottom="20dp"
                 android:fontFamily="@font/kotra"
-                android:text="pleased, delighted"
+                android:text="mug, goblet, chalice"
                 android:textColor="#999999"
                 android:textSize="30dp"
                 android:textStyle="normal" />
@@ -181,7 +182,7 @@
                 android:layout_marginTop="12dp"
                 android:layout_marginEnd="24dp"
                 android:fontFamily="@font/kotra"
-                android:text="반의어"
+                android:text=""
                 android:textColor="@color/darkblue"
                 android:textSize="35dp"
                 android:textStyle="normal" />
@@ -194,7 +195,7 @@
                 android:layout_marginTop="12dp"
                 android:layout_marginEnd="24dp"
                 android:fontFamily="@font/kotra"
-                android:text="sad, unfortunate"
+                android:text=""
                 android:textColor="#999999"
                 android:textSize="30dp"
                 android:textStyle="normal" />

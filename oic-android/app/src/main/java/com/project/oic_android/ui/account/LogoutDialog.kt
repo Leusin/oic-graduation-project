@@ -26,7 +26,7 @@ class LogoutDialog : DialogFragment() {
         _binding = FragmentDialogBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        binding.textView.text = getString(R.string.logout_massage)
+        binding.textView.text = "로그아웃 하시겠습니까?"
         binding.logoutOk.text = getString(R.string.logout_ok)
 
         // 레이아웃 배경을 투명하게 해줌, 필수 아님
