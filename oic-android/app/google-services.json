@@ -1,41 +1,33 @@
 {
   "project_info": {
-    "project_number": "924806410873",
-    "project_id": "oic-android",
-    "storage_bucket": "oic-android.appspot.com"
+    "project_number": "1024097248984",
+    "project_id": "oicproject-fda8d",
+    "storage_bucket": "oicproject-fda8d.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:924806410873:android:ecb24a5a7ca107d640daa8",
+        "mobilesdk_app_id": "1:1024097248984:android:055d5fae2c0b068d1399ad",
         "android_client_info": {
           "package_name": "com.project.oic_android"
         }
       },
       "oauth_client": [
         {
-          "client_id": "924806410873-vfgm0dt5eco21beinrm4gr8ogagg7lgg.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.project.oic_android",
-            "certificate_hash": "1f5b321d8f47ff173298f0396f0ea79e12b845d2"
-          }
-        },
-        {
-          "client_id": "924806410873-h6p3e9gm2a6neo7kcqgtam73dl88pkdu.apps.googleusercontent.com",
+          "client_id": "1024097248984-q2oolmv30p7qa1hpsh4pjd09a0mj3rnc.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyC2RU774QtbV4bXW77JbIy5sGZzMwJz3RY"
+          "current_key": "AIzaSyACAnYd9ypetZ-1Y5ZOzFcwLPbSO5f7O_I"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "924806410873-h6p3e9gm2a6neo7kcqgtam73dl88pkdu.apps.googleusercontent.com",
+              "client_id": "1024097248984-q2oolmv30p7qa1hpsh4pjd09a0mj3rnc.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

@@ -13,7 +13,10 @@ import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import com.project.oic_android.MainActivity
 import com.project.oic_android.R
 import com.project.oic_android.databinding.ActivityLoginBinding
@@ -21,6 +24,7 @@ import com.project.oic_android.databinding.ActivityLoginBinding
 class LoginActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityLoginBinding
+    private var auth : FirebaseAuth? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -61,7 +65,7 @@ class LoginActivity : AppCompatActivity() {
         binding.loginGoogle.setOnClickListener {
             val gso = GoogleSignInOptions
                 .Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestIdToken(getString(R.string.default_web_client_id))  // 오류 표시 문시바람 실행 시 별 문제 없음
+                .requestIdToken(getString(R.string.default_web_client_id))  // 오류 표시 문시 바람 실행 시 별 문제 없음
                 .requestEmail()
                 .build()
             val signInIntent = GoogleSignIn.getClient(this, gso).signInIntent
@@ -69,43 +73,51 @@ class LoginActivity : AppCompatActivity() {
         }
 
         // 이메일 회원가입 버튼
+//        binding.actionJoinIn.setOnClickListener {
+//            val email = binding.usernameJoin.text.toString()
+//            val password = binding.passwordJoin.text.toString()
+//            val passwordCk = binding.passwordJoinCheck.text.toString()
+//            AuthApplication.auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this) { task ->
+//                binding.usernameJoin.text.clear()
+//                binding.passwordJoin.text.clear()
+//                binding.passwordJoinCheck.text.clear()
+//                if(task.isSuccessful) {
+//                    AuthApplication.auth.currentUser?.sendEmailVerification()?.addOnCompleteListener{ sendTask ->
+                        //if (sendTask.isSuccessful) { Toast.makeText(baseContext, "$email 로 인증 메일 전송", Toast.LENGTH_SHORT).show(); changeVisibility("logout") }
+                        //else { Toast.makeText(baseContext, "인증 메일 전송 실패", Toast.LENGTH_SHORT).show(); changeVisibility("logout") }
+//                    }
+//                }
+//                else {
+//                    Toast.makeText(baseContext, "회원가입 실패", Toast.LENGTH_SHORT).show()
+//                }
+//            }
+//        }
+
+        // 회원가입
+        auth = Firebase.auth
+        // 회원가입 버튼
         binding.actionJoinIn.setOnClickListener {
-            val email = binding.usernameJoin.text.toString()
-            val password = binding.passwordJoin.text.toString()
-            val passwordCk = binding.passwordJoinCheck.text.toString()
-            AuthApplication.auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this) { task ->
-                binding.usernameJoin.text.clear()
-                binding.passwordJoin.text.clear()
-                binding.passwordJoinCheck.text.clear()
-                if(task.isSuccessful) {
-                    AuthApplication.auth.currentUser?.sendEmailVerification()?.addOnCompleteListener{ sendTask ->
-                        if (sendTask.isSuccessful) { Toast.makeText(baseContext, "$email 로 인증 메일 전송", Toast.LENGTH_SHORT).show(); changeVisibility("logout") }
-                        else { Toast.makeText(baseContext, "인증 메일 전송 실패", Toast.LENGTH_SHORT).show(); changeVisibility("logout") }
-                    }
-                }
-                else {
-                    Toast.makeText(baseContext, "회원가입 실패", Toast.LENGTH_SHORT).show()
-                }
-            }
+            createAccount(binding.usernameJoin.text.toString(), binding.passwordJoin.text.toString())
         }
 
         // 이메일 로그인
         binding.login.setOnClickListener {
-            val email = binding.username.text.toString()
-            val password = binding.password.text.toString()
-            AuthApplication.auth.signInWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this) { task->
-                    binding.username.text.clear()
-                    binding.password.text.clear()
-                    if (task.isSuccessful) {
-                        if (AuthApplication.checkAuth()) { // 로그인 성공
-                            AuthApplication.email = email; changeVisibility("이메일")
-                            val intent = Intent(this, MainActivity::class.java)
-                        }
-                        else { Toast.makeText(baseContext, "인증 메일을 확인해 주세요", Toast.LENGTH_SHORT).show() }
-                    }
+//           val email = binding.username.text.toString()
+//            val password = binding.password.text.toString()
+ //           AuthApplication.auth.signInWithEmailAndPassword(email, password)
+ //               .addOnCompleteListener(this) { task->
+  //                  binding.username.text.clear()
+  //                  binding.password.text.clear()
+    //                if (task.isSuccessful) {
+    //                    if (AuthApplication.checkAuth()) { // 로그인 성공
+      //                      AuthApplication.email = email; changeVisibility("이메일")
+        //                    val intent = Intent(this, MainActivity::class.java)
+         //               }
+          //              else { Toast.makeText(baseContext, "인증 메일을 확인해 주세요", Toast.LENGTH_SHORT).show() }
+           //         }
+            signIn(binding.username.text.toString(), binding.password.text.toString())
                 }
-        }
+
 
         // 카카오톡 로그인
         binding.loginTalk.setOnClickListener {
@@ -122,6 +134,38 @@ class LoginActivity : AppCompatActivity() {
             }
             else -> {
                 return super.onOptionsItemSelected(item)
+            }
+        }
+    }
+
+    // 계정 생성
+    private fun createAccount(email:  String, password: String) {
+        if (email.isNotEmpty() && password.isNotEmpty()) {
+            auth?.createUserWithEmailAndPassword(email, password)?.addOnCompleteListener(this) {
+                    task -> if (task.isSuccessful) {
+                Toast.makeText(this, "회원가입 성공", Toast.LENGTH_SHORT).show()
+                changeVisibility("logout")
+            }
+            else {
+                Toast.makeText(this, "회원가입 실패", Toast.LENGTH_SHORT).show()
+                changeVisibility("logout")
+            }
+            }
+        }
+    }
+
+    // 로그인
+    private fun signIn(email: String, password: String) {
+        if (email.isNotEmpty() && password.isNotEmpty()) {
+            auth?.signInWithEmailAndPassword(email, password)?.addOnCompleteListener(this) {
+                task -> if (task.isSuccessful) {
+                    Toast.makeText(baseContext,"환영합니다", Toast.LENGTH_SHORT).show()
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+            }
+                else {
+                    Toast.makeText(baseContext, "로그인에 실패했습니다.", Toast.LENGTH_SHORT).show()
+            }
             }
         }
     }
