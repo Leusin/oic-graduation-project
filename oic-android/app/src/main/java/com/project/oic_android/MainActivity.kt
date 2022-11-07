@@ -181,6 +181,8 @@ class MainActivity : AppCompatActivity() {
                             //listOf()
 //                        ))
                         intent.putExtra("data", input_word)
+                        val translate = TranslateTask(input_word)
+                        intent.putExtra("dataKr", translate)    // 번역이 안됨 (TranslateTask 함수 작동 x)
                         startActivity(intent)
 
                     } else {
@@ -225,8 +227,9 @@ class MainActivity : AppCompatActivity() {
                 call: Call<ResultTransferPapago>,
                 response: Response<ResultTransferPapago>
             ) {
-                Log.d("TAG", "성공 : ${response.raw()}")
+                Log.d("TAG", "성공 : ${response.raw()}")      // 로그 창 확인시 message 못 받아옴.. 빈칸임
                 result = "뜻:" + response.message()
+                Log.d("TAG", result)
             }
 
             override fun onFailure(call: Call<ResultTransferPapago>, t: Throwable) {

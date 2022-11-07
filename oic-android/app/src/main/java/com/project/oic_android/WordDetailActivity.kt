@@ -32,6 +32,7 @@ class WordDetailActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityDetailWordBinding
     private lateinit var datas: String
+    private lateinit var datasKr: String
     private lateinit var databaseRef: DatabaseReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -86,12 +87,14 @@ class WordDetailActivity : AppCompatActivity() {
     private fun GetWordData() {
         //datas = intent.getSerializableExtra("data") as Word
         datas = intent.getStringExtra("data") as String
+        datasKr = intent.getStringExtra("dataKr") as String
         //datas = Word("apple", "사과") // 개발 정 안되면 이걸로 고정시키기
         Log.e("getData",datas)
+        Log.e("getData", datasKr)
 
         //Glide.with(this).load(datas.img).into(binding.imageView)
         binding.wordinfoEn.text = datas
-        binding.wordinfoKr.text = TranslateTask(datas)
+        binding.wordinfoKr.text = datasKr
         //binding.wordinfoKr.text = datas.word_kor
         //binding.wordKr.text = datas.word_kor
 
@@ -145,6 +148,7 @@ class WordDetailActivity : AppCompatActivity() {
             ) {
                 Log.d("TAG", "성공 : ${response.raw()}")
                 result = "뜻:" + response.message()
+                Log.d("TAG", result)
             }
 
             override fun onFailure(call: Call<ResultTransferPapago>, t: Throwable) {
