@@ -64,12 +64,12 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/word_en"
+                    android:id="@+id/wordinfo_en"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="30dp"
                     android:fontFamily="@font/kotra"
-                    android:text="happy"
+                    android:text=""
                     android:textColor="#191919"
                     android:textSize="50sp"
                     android:textStyle="bold" />
@@ -99,8 +99,9 @@
 
             </LinearLayout>
 
+
             <TextView
-                android:id="@+id/word_kr"
+                android:id="@+id/wordinfo_kr"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"

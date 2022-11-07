@@ -160,9 +160,11 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private fun getData(word:String){
+    private fun getData(input_word:String){
+        val intent = Intent(this, WordDetailActivity::class.java)
+
         CoroutineScope(Dispatchers.IO).launch {
-            val response = RetrofitInstance.api.getWord(word)
+            val response = RetrofitInstance.api.getWord(input_word)
             withContext(Dispatchers.Main) {
                 try {
                     if (response.isSuccessful && response.body() != null) {
@@ -170,15 +172,16 @@ class MainActivity : AppCompatActivity() {
                         val responseBody = response.body()!!.listIterator()
                         val next = responseBody.next()
 
-                        openDetailWordPage(Word(
-                            R.mipmap.ic_launcher,
-                            word,
-                            TranslateTask(word),
-                            "example",
-                            "https://api.dictionaryapi.dev/media/pronunciations/en/$word-us.mp3",
-                            listOf(),
-                            listOf()
-                        ))
+//                        openDetailWordPage(Word(
+//                            input_word,
+//                            TranslateTask(input_word),
+                            //"example",
+                            //"https://api.dictionaryapi.dev/media/pronunciations/en/$word-us.mp3",
+                            //listOf(),
+                            //listOf()
+//                        ))
+                        intent.putExtra("data", input_word)
+                        startActivity(intent)
 
                     } else {
                         Toast.makeText(
@@ -234,12 +237,14 @@ class MainActivity : AppCompatActivity() {
 
         return result
     }
-
+/*
     private fun openDetailWordPage(word: Word) {
         val intent = Intent(this, WordDetailActivity::class.java)
-        intent.putExtra("data", word)
+        intent.putExtra("data", word.word_eng)
         startActivity(intent)
     }
+
+ */
 
     private fun checkInternetConnection(context: Context):Boolean{
         val connectivityManger=context.getSystemService(CONNECTIVITY_SERVICE) as ConnectivityManager

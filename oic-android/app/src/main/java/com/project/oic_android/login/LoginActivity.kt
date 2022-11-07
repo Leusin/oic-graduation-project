@@ -46,31 +46,31 @@ class LoginActivity : AppCompatActivity() {
         }
 
         // 구글 로그인
-        val requestLauncher = registerForActivityResult(
-            ActivityResultContracts.StartActivityForResult()) {
-            val task = GoogleSignIn.getSignedInAccountFromIntent(it.data)
-            try {
-                val account = task.getResult(ApiException::class.java)!!
-                val credential = GoogleAuthProvider.getCredential(account.idToken, null)
-                AuthApplication.auth.signInWithCredential(credential).addOnCompleteListener(this) { task ->
+       // val requestLauncher = registerForActivityResult(
+        //    ActivityResultContracts.StartActivityForResult()) {
+      //      val task = GoogleSignIn.getSignedInAccountFromIntent(it.data)
+     //       try {
+      //          val account = task.getResult(ApiException::class.java)!!
+      //          val credential = GoogleAuthProvider.getCredential(account.idToken, null)
+      //          AuthApplication.auth.signInWithCredential(credential).addOnCompleteListener(this) { task ->
                     // 로그인 성공
-                    if (task.isSuccessful) { AuthApplication.email = account.email; changeVisibility("구글 계정")}
-                    else { changeVisibility("logout") }
-                }
-            }
-            catch (e:ApiException) { changeVisibility("logout") }
-        }
+       //             if (task.isSuccessful) { AuthApplication.email = account.email; changeVisibility("구글 계정")}
+      //              else { changeVisibility("logout") }
+     //           }
+     //       }
+    //        catch (e:ApiException) { changeVisibility("logout") }
+     //   }
 
         // 구글 로그인 버튼
-        binding.loginGoogle.setOnClickListener {
-            val gso = GoogleSignInOptions
-                .Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestIdToken(getString(R.string.default_web_client_id))  // 오류 표시 문시 바람 실행 시 별 문제 없음
-                .requestEmail()
-                .build()
-            val signInIntent = GoogleSignIn.getClient(this, gso).signInIntent
-            requestLauncher.launch(signInIntent)
-        }
+     //   binding.loginGoogle.setOnClickListener {
+    //        val gso = GoogleSignInOptions
+    //            .Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+    //            .requestIdToken(getString(R.string.default_web_client_id))  // 오류 표시 문시 바람 실행 시 별 문제 없음
+    //            .requestEmail()
+    //            .build()
+     //       val signInIntent = GoogleSignIn.getClient(this, gso).signInIntent
+    //        requestLauncher.launch(signInIntent)
+   //     }
 
         // 이메일 회원가입 버튼
 //        binding.actionJoinIn.setOnClickListener {

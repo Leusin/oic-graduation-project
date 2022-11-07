@@ -6,57 +6,82 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import kotlinx.android.synthetic.main.list_item.view.*
 import com.bumptech.glide.Glide
 import com.project.oic_android.R
-import com.project.oic_android.adapters.ItemAdapter.ItemViewHolder
+//import com.project.oic_android.adapters.ItemAdapter.ItemViewHolder
 import com.project.oic_android.modelData.Word
 import com.project.oic_android.ui.note.NoteFragment
 
-class ItemAdapter(
-    private val context: NoteFragment,
-    private val dataset: MutableList<Word>
-) : RecyclerView.Adapter<ItemViewHolder>() {
+//class ItemAdapter(
+//    private val context: NoteFragment,
+//    private val dataset: MutableList<Word>
+//) : RecyclerView.Adapter<ItemViewHolder>() {
 
     // ClickListener 기능 추가가
-    interface OnItemClickListener{
-        fun onItemClick(view: View, data: Word, position: Int)
-    }
-    private var listener: OnItemClickListener? = null
-    fun setOnItemClickListener(listener: OnItemClickListener) {
-        this.listener = listener
-    }
+  //  interface OnItemClickListener{
+  //      fun onItemClick(view: View, data: Word, position: Int)
+  //  }
+  //  private var listener: OnItemClickListener? = null
+  //  fun setOnItemClickListener(listener: OnItemClickListener) {
+  //      this.listener = listener
+  //  }
 
     // 아이템 뷰를 위한 뷰홀더 객체 생성하여 리턴
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
-        val adapterLayout = LayoutInflater.from(parent.context)
-            .inflate(R.layout.list_item, parent, false)
-        return ItemViewHolder(adapterLayout)
-    }
+   // override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
+     //   val adapterLayout = LayoutInflater.from(parent.context)
+      //      .inflate(R.layout.list_item, parent, false)
+      //  return ItemViewHolder(adapterLayout)
+   // }
 
-    override fun getItemCount() = dataset.size
+  //  override fun getItemCount() = dataset.size
 
     // 해당 position 에 데이터를 뷰홀더의 아이템 뷰에 표시
-    override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
-        holder.bind(dataset[position])
-    }
+   // override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
+     //   holder.bind(dataset[position])
+   // }
 
     // 아이템 뷰를 저장하는 뷰홀더
-    inner class ItemViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val wordEn: TextView  = itemView.findViewById(R.id.word_en)
-        val wordKr: TextView  = itemView.findViewById(R.id.word_kr)
+
+    //inner class ItemViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+    //    val wordEn: TextView  = itemView.findViewById(R.id.word_en)
+    //    val wordKr: TextView  = itemView.findViewById(R.id.word_kr)
         //val imageView: ImageView = itemView.findViewById(R.id.imageView)
 
-        fun bind(item: Word) {
-            wordEn.text = item.word_eng
-            wordKr.text = item.word_kor
+    //   fun bind(item: Word) {
+    //        wordEn.text = item.word_eng
+    //        wordKr.text = item.word_kor
             //Glide.with(itemView).load(item.img).into(imageView)
 
-            val position = adapterPosition
-            if(position != RecyclerView.NO_POSITION) {
-                itemView.setOnClickListener {
-                    listener?.onItemClick(itemView, item, position)
-                }
-            }
+    //        val position = adapterPosition
+    //        if(position != RecyclerView.NO_POSITION) {
+    //            itemView.setOnClickListener {
+    //                listener?.onItemClick(itemView, item, position)
+    //            }
+    //        }
+    //    }
+    //}
+
+//class ItemAdapter : RecyclerView.Adapter<ItemAdapter.ViewHolder>() {
+class ItemAdapter: RecyclerView.Adapter<ItemAdapter.itemViewHolder>() {
+    var items = ArrayList<Word>()
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemAdapter.itemViewHolder {
+        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.list_item, parent, false)
+        return itemViewHolder(itemView)
+    }
+
+    override fun getItemCount() = items.size
+
+    override fun onBindViewHolder(holder: itemViewHolder, position: Int) {
+        val item = items[position]
+        holder.setItem(item)
+    }
+
+    inner class itemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        fun setItem(item: Word) {
+            itemView.word_en.text = item.word_eng
+            itemView.word_kr.text = item.word_kor
         }
     }
 }
