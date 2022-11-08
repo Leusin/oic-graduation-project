@@ -58,6 +58,7 @@ android:layout_width="0dp"
     <!--        android:text="@{item.mean}"-->
     <TextView
         android:id="@+id/word_kr"
+        android:visibility="invisible"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:gravity="center"

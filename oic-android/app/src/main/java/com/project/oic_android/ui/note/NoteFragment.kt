@@ -8,12 +8,15 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.get
+import androidx.core.view.size
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.database.*
 import com.project.oic_android.MainActivity
+import com.project.oic_android.R
 import com.project.oic_android.WordDetailActivity
 import com.project.oic_android.adapters.ItemAdapter
 import com.project.oic_android.databinding.FragmentNoteBinding
@@ -98,7 +101,6 @@ class NoteFragment : Fragment() {
         initRecyclerView()
 
         switchButtonEvent()
-
     }
 
     private fun initRecyclerView(){
@@ -153,16 +155,20 @@ class NoteFragment : Fragment() {
         }
     }
 
+
     private fun switchButtonEvent(){
-        binding.switch1.isChecked = true
+        binding.switch1.isChecked = false
         binding.switch1.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked){
                 // 뜻 나타남 이벤트 추가
-                recycler_view.word_kr.setVisibility(View.VISIBLE)
+                for (i in 0..adapter.items.size-1) {
+                    binding.recyclerView[i].word_kr.setVisibility(View.VISIBLE)
+                }
             } else {
                 // 뜻 없어짐 이벤트 추가
-
-                recycler_view.word_kr.setVisibility(View.INVISIBLE)
+                for (i in 0..adapter.items.size-1) {
+                    binding.recyclerView[i].word_kr.setVisibility(View.INVISIBLE)
+                }
             }
         }
     }

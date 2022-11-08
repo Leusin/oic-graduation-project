@@ -208,8 +208,8 @@ class MainActivity : AppCompatActivity() {
 
     private fun TranslateTask(word: String): String {
 
-        val CLIENT_ID = "U3RduiCODnGBsgFtisU9"
-        val CLIENT_SECRET = "mKWeLOuACH"
+        val CLIENT_ID = "2ptKkjqOFyhO66eKdYzM"
+        val CLIENT_SECRET = "9z23r5wkXW"
         val BASE_URL_NAVER_API = "https://openapi.naver.com/"
 
         val retrofit = Retrofit.Builder()

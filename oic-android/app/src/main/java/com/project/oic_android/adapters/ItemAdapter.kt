@@ -108,13 +108,14 @@ class ItemAdapter: RecyclerView.Adapter<ItemAdapter.ViewHolder>() {
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         init {
             itemView.setOnClickListener {
-                val context = itemView.getContext()
-                Toast.makeText(itemView?.context, "클릭 = ${itemView.word_en.text}", Toast.LENGTH_LONG).show()
-                val intent = Intent(context, WordDetailActivity::class.java)
-                intent.putExtra("data", "${itemView.word_en.text}")
-                context.startActivity(intent)
-            }
+                //val context = itemView.getContext()
+                Toast.makeText(itemView?.context, "클릭 = ${itemView.word_en.text}", Toast.LENGTH_SHORT).show()
+                //val intent = Intent(context, WordDetailActivity::class.java)
+                //intent.putExtra("data", "${itemView.word_en.text}")
+                //context.startActivity(intent)
+                }
         }
+
         fun setItem(item: Word) {
             itemView.word_en.text = item.word_eng
             itemView.word_kr.text = item.word_kor
