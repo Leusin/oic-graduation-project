@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.MenuItem
 import android.view.View.*
 import android.view.WindowManager
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
@@ -102,6 +103,9 @@ class LoginActivity : AppCompatActivity() {
 
         // 이메일 로그인
         binding.login.setOnClickListener {
+            //changeVisibility("이메일")
+            signIn(binding.username.text.toString(), binding.password.text.toString())
+
 //           val email = binding.username.text.toString()
 //            val password = binding.password.text.toString()
  //           AuthApplication.auth.signInWithEmailAndPassword(email, password)
@@ -109,15 +113,14 @@ class LoginActivity : AppCompatActivity() {
   //                  binding.username.text.clear()
   //                  binding.password.text.clear()
     //                if (task.isSuccessful) {
+
     //                    if (AuthApplication.checkAuth()) { // 로그인 성공
       //                      AuthApplication.email = email; changeVisibility("이메일")
         //                    val intent = Intent(this, MainActivity::class.java)
          //               }
           //              else { Toast.makeText(baseContext, "인증 메일을 확인해 주세요", Toast.LENGTH_SHORT).show() }
            //         }
-            signIn(binding.username.text.toString(), binding.password.text.toString())
                 }
-
 
         // 카카오톡 로그인
         binding.loginTalk.setOnClickListener {
@@ -141,27 +144,37 @@ class LoginActivity : AppCompatActivity() {
     // 계정 생성
     private fun createAccount(email:  String, password: String) {
         if (email.isNotEmpty() && password.isNotEmpty()) {
-            auth?.createUserWithEmailAndPassword(email, password)?.addOnCompleteListener(this) {
-                    task -> if (task.isSuccessful) {
-                Toast.makeText(this, "회원가입 성공", Toast.LENGTH_SHORT).show()
-                changeVisibility("logout")
-            }
+            if (password.length < 8) Toast.makeText(this, "8글자 이상 입력해주세요", Toast.LENGTH_SHORT).show()
             else {
-                Toast.makeText(this, "회원가입 실패", Toast.LENGTH_SHORT).show()
-                changeVisibility("logout")
-            }
-            }
-        }
+                auth?.createUserWithEmailAndPassword(email, password)?.addOnCompleteListener(this) {
+                        task -> if (task.isSuccessful) {
+                            Toast.makeText(this, "회원가입 성공", Toast.LENGTH_SHORT).show()
+                            changeVisibility("logout")
+                        }
+                       else {
+                    Toast.makeText(this, "8글자 이상 입력해주세요", Toast.LENGTH_SHORT).show()
+                         Toast.makeText(this, "회원가입 실패", Toast.LENGTH_SHORT).show()
+                        changeVisibility("logout")
+                    }
+                }
+         }
+       }
     }
 
     // 로그인
     private fun signIn(email: String, password: String) {
         if (email.isNotEmpty() && password.isNotEmpty()) {
-            auth?.signInWithEmailAndPassword(email, password)?.addOnCompleteListener(this) {
-                task -> if (task.isSuccessful) {
-                    Toast.makeText(baseContext,"환영합니다", Toast.LENGTH_SHORT).show()
-                val intent = Intent(this, MainActivity::class.java)
-                startActivity(intent)
+            auth?.signInWithEmailAndPassword(email, password)?.addOnCompleteListener(this) { task ->
+                if (task.isSuccessful) {
+                    Toast.makeText(baseContext, "환영합니다", Toast.LENGTH_SHORT).show()
+                    if (AuthApplication.checkAuth()) { // 로그인 성공
+                        AuthApplication.email = email
+                    } else {
+                    }
+
+                    changeVisibility("이메일")
+                    //val intent = Intent(this, MainActivity::class.java)
+                    //startActivity(intent)
             }
                 else {
                     Toast.makeText(baseContext, "로그인에 실패했습니다.", Toast.LENGTH_SHORT).show()
@@ -211,6 +224,11 @@ class LoginActivity : AppCompatActivity() {
                 loginGoogle.visibility = GONE
             }
         } // 회원가입 화면
+        else if (mode == "이메일") {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
         else {
             // 메인 액티비티로 이동
             val intent = Intent(this, MainActivity::class.java)

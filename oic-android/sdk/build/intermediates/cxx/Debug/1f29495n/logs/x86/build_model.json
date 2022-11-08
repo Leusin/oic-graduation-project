@@ -126,7 +126,7 @@
         "rootBuildGradleFolder": "C:\\OIC\\final\\oic-android",
         "sdkFolder": "C:\\Users\\lg25l\\AppData\\Local\\Android\\Sdk",
         "isBuildOnlyTargetAbiEnabled": true,
-        "ideBuildTargetAbi": "x86",
+        "ideBuildTargetAbi": "x86,armeabi-v7a,armeabi",
         "isCmakeBuildCohabitationEnabled": false,
         "isPrefabEnabled": false
       },

@@ -9,6 +9,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.database.*
 import com.project.oic_android.MainActivity
@@ -96,6 +98,7 @@ class NoteFragment : Fragment() {
         initRecyclerView()
 
         switchButtonEvent()
+
     }
 
     private fun initRecyclerView(){
@@ -108,14 +111,19 @@ class NoteFragment : Fragment() {
 
         adapter = ItemAdapter()
 
-        //adapter.items.add(Word("apple", "사과"))
+//        adapter.items.add(Word("expiate", "속죄하다"))
+//        adapter.items.add(Word("daft", "바보 같은"))
+//        adapter.items.add(Word("straw", "빨대"))
+//        adapter.items.add(Word("chair", "의자"))
+//        adapter.items.add(Word("table", "식탁"))
+//        adapter.items.add(Word("cup", "컵"))
 
         binding.recyclerView.adapter = adapter
 
         databaseRef =
             FirebaseDatabase.getInstance("https://oicproject-fda8d-default-rtdb.firebaseio.com/").reference
 
-        databaseRef.orderByKey().limitToFirst(10).addValueEventListener(
+        databaseRef.orderByKey().limitToFirst(100).addValueEventListener(
             object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 loadCommentList(snapshot)
@@ -150,16 +158,23 @@ class NoteFragment : Fragment() {
         binding.switch1.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked){
                 // 뜻 나타남 이벤트 추가
-                word_kr.setVisibility(View.VISIBLE)
+                recycler_view.word_kr.setVisibility(View.VISIBLE)
             } else {
                 // 뜻 없어짐 이벤트 추가
-                word_kr.setVisibility(View.INVISIBLE)
+
+                recycler_view.word_kr.setVisibility(View.INVISIBLE)
             }
         }
+    }
+
+    private fun refreshFragment(fragment: Fragment, fragmentManager: FragmentManager) {
+        var ft: FragmentTransaction = fragmentManager.beginTransaction()
+        ft.detach(fragment).attach(fragment).commit()
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
+
 }

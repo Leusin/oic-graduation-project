@@ -19,11 +19,13 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.project.oic_android.R.id.*
+import com.project.oic_android.R.id.method_text
 import com.project.oic_android.databinding.ActivityMainBinding
 import com.project.oic_android.retrofit.NaverAPI
 import com.project.oic_android.modelData.ResultTransferPapago
 import com.project.oic_android.modelData.Word
 import com.project.oic_android.retrofit.RetrofitInstance
+import kotlinx.android.synthetic.main.fragment_account.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -104,7 +106,8 @@ class MainActivity : AppCompatActivity() {
 
     // LoginActivity 에서 받은 데이터 Fragment로 전송
     fun getUserData(): String? {
-        val method = intent.getStringExtra("method")
+        var method = intent.getStringExtra("method")
+        method = "이메일"      // 값 고정해버림
         return method
     }
 

@@ -90,7 +90,7 @@
             android:layout_marginBottom="8dp"
             android:ems="10"
             android:gravity="center_horizontal"
-            android:text="이메일로 가입"
+            android:text="이메일"
             android:textColor="#707070"
             android:textSize="20sp"
             android:fontFamily="@font/kotra"
