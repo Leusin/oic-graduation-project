@@ -121,42 +121,4 @@ class WordDetailActivity : AppCompatActivity() {
         binding.anto.text = "반의어"
 //
     }
-
-    private fun TranslateTask(word: String): String {
-
-        val CLIENT_ID = "U3RduiCODnGBsgFtisU9"
-        val CLIENT_SECRET = "mKWeLOuACH"
-        val BASE_URL_NAVER_API = "https://openapi.naver.com/"
-
-        val retrofit = Retrofit.Builder()
-            .baseUrl(BASE_URL_NAVER_API)
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
-        val api = retrofit.create(NaverAPI::class.java)
-
-        val wd = word
-
-        val callPostTransferPapago = api.transferPapago(CLIENT_ID, CLIENT_SECRET,
-            "en", "ko", wd)
-
-        var result = ""
-
-        callPostTransferPapago.enqueue(object : Callback<ResultTransferPapago> {
-            override fun onResponse(
-                call: Call<ResultTransferPapago>,
-                response: Response<ResultTransferPapago>
-            ) {
-                Log.d("TAG", "성공 : ${response.raw()}")
-                result = "뜻:" + response.message()
-                Log.d("TAG", result)
-            }
-
-            override fun onFailure(call: Call<ResultTransferPapago>, t: Throwable) {
-                Log.d("TAG", "실패 : $t")
-                result = "번역 실패"
-            }
-        })
-
-        return result
-    }
 }

@@ -3,7 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="100dp">
+    android:layout_height="80dp"
+    android:layout_marginTop="5dp"
+    android:background="@drawable/edge">
 <!--
     <ImageView
         android:id="@+id/imageView"
@@ -29,6 +31,7 @@
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:gravity="center"
+        android:layout_marginLeft="30dp"
         android:lines="1"
         android:paddingStart="5dp"
         android:paddingEnd="5dp"
@@ -53,15 +56,16 @@ android:layout_width="0dp"
         app:layout_constraintStart_toEndOf="@+id/imageView"
         app:layout_constraintTop_toBottomOf="@+id/word_en" -->
 
+    <!--        android:text="@{item.mean}"-->
     <TextView
         android:id="@+id/word_kr"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:gravity="center"
         android:lines="1"
-        android:paddingStart="5dp"
+        android:layout_marginLeft="30dp"
+        android:paddingStart="50dp"
         android:paddingEnd="5dp"
-        android:text="@{item.mean}"
         android:textColor="@color/black"
         android:textSize="25dp"
         android:textAlignment="center"

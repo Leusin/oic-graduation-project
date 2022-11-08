@@ -1,6 +1,7 @@
 package com.project.oic_android.ui.note
 
 import android.content.ClipData.Item
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -10,11 +11,14 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.database.*
+import com.project.oic_android.MainActivity
 import com.project.oic_android.WordDetailActivity
 import com.project.oic_android.adapters.ItemAdapter
 import com.project.oic_android.databinding.FragmentNoteBinding
 import com.project.oic_android.modelData.Word
 import kotlinx.android.synthetic.main.fragment_note.*
+import kotlinx.android.synthetic.main.list_item.*
+import kotlinx.android.synthetic.main.list_item.view.*
 
 class NoteFragment : Fragment() {
 
@@ -22,7 +26,15 @@ class NoteFragment : Fragment() {
     private val binding get() = _binding!!
 
     val data = Datasource().words // 아이템 배열
-//    lateinit var itemAdapter: ItemAdapter// 어댑터
+    lateinit var itemAdapter: ItemAdapter// 어댑터
+
+    lateinit var mainActivity: MainActivity
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+
+        mainActivity = context as MainActivity
+    }
 
 //    override fun onCreateView(
 //        inflater: LayoutInflater,
@@ -76,15 +88,29 @@ class NoteFragment : Fragment() {
         adapter = ItemAdapter()
 
         return root
+    }
 
-//        val layoutManager = LinearLayoutManager(this)
-//        layoutManager.setReverseLayout(true)
-//        layoutManager.setStackFromEnd(true)
-//        recycler_view.layoutManager = layoutManager
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
-        //adapter = ItemAdapter()
+        initRecyclerView()
 
-        recycler_view.adapter = adapter
+        switchButtonEvent()
+    }
+
+    private fun initRecyclerView(){
+        binding.recyclerView.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+
+        val layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+        layoutManager.setReverseLayout(true)
+        layoutManager.setStackFromEnd(true)
+        recycler_view.layoutManager = layoutManager
+
+        adapter = ItemAdapter()
+
+        //adapter.items.add(Word("apple", "사과"))
+
+        binding.recyclerView.adapter = adapter
 
         databaseRef =
             FirebaseDatabase.getInstance("https://oicproject-fda8d-default-rtdb.firebaseio.com/").reference
@@ -124,8 +150,10 @@ class NoteFragment : Fragment() {
         binding.switch1.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked){
                 // 뜻 나타남 이벤트 추가
+                word_kr.setVisibility(View.VISIBLE)
             } else {
                 // 뜻 없어짐 이벤트 추가
+                word_kr.setVisibility(View.INVISIBLE)
             }
         }
     }

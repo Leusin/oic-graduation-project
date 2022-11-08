@@ -168,7 +168,6 @@ class MainActivity : AppCompatActivity() {
             withContext(Dispatchers.Main) {
                 try {
                     if (response.isSuccessful && response.body() != null) {
-
                         val responseBody = response.body()!!.listIterator()
                         val next = responseBody.next()
 
@@ -180,6 +179,7 @@ class MainActivity : AppCompatActivity() {
                             //listOf(),
                             //listOf()
 //                        ))
+                        Log.d("putData", input_word)
                         intent.putExtra("data", input_word)
                         val translate = TranslateTask(input_word)
                         intent.putExtra("dataKr", translate)    // 번역이 안됨 (TranslateTask 함수 작동 x)
