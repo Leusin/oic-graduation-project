@@ -114,18 +114,15 @@ class NoteFragment : Fragment() {
         adapter = ItemAdapter()
 
 //        adapter.items.add(Word("expiate", "속죄하다"))
-//        adapter.items.add(Word("daft", "바보 같은"))
 //        adapter.items.add(Word("straw", "빨대"))
 //        adapter.items.add(Word("chair", "의자"))
-//        adapter.items.add(Word("table", "식탁"))
-//        adapter.items.add(Word("cup", "컵"))
 
         binding.recyclerView.adapter = adapter
 
         databaseRef =
             FirebaseDatabase.getInstance("https://oicproject-fda8d-default-rtdb.firebaseio.com/").reference
 
-        databaseRef.orderByKey().limitToFirst(100).addValueEventListener(
+        databaseRef.orderByKey().limitToFirst(30).addValueEventListener(
             object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 loadCommentList(snapshot)

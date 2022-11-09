@@ -89,8 +89,8 @@ class WordDetailActivity : AppCompatActivity() {
         datas = intent.getStringExtra("data") as String
         datasKr = intent.getStringExtra("dataKr") as String
         //datas = Word("apple", "사과") // 개발 정 안되면 이걸로 고정시키기
-        Log.e("getData",datas)
-        Log.e("getData", datasKr)
+        //Log.e("getData",datas)
+        //Log.e("getData", datasKr)
 
         //Glide.with(this).load(datas.img).into(binding.imageView)
         binding.wordinfoEn.text = datas
