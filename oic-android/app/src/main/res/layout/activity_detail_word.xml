@@ -109,7 +109,7 @@
                 android:layout_marginEnd="24dp"
                 android:layout_marginBottom="30dp"
                 android:fontFamily="@font/kotra"
-                android:text=""
+                android:text="성공하다"
                 android:textColor="#191919"
                 android:textSize="40dp"
                 android:textStyle="normal" />

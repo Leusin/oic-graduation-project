@@ -14,6 +14,7 @@ import android.view.View
 import android.widget.ImageView
 import com.bumptech.glide.Glide
 import com.project.oic_android.R
+import com.project.oic_android.WordDetailActivity
 import com.project.oic_android.databinding.ActivityImageViewBinding
 import okhttp3.MediaType
 import java.io.ByteArrayOutputStream
@@ -38,6 +39,7 @@ class ImageViewActivity : AppCompatActivity() {
 
     private fun setListener() {
         binding.backIcon.setOnClickListener { finish() }
+//        binding.imageSearchButton.setOnClickListener{ uploadImgToServer() }
         binding.imageSearchButton.setOnClickListener{ uploadImgToServer() }
     }
 
@@ -46,5 +48,11 @@ class ImageViewActivity : AppCompatActivity() {
         binding.imageViewPreview.setImageURI(currentImageURL)
     }
 
-    private fun uploadImgToServer() { } // 서버로 사진 업로드
+//    private fun uploadImgToServer() { } // 서버로 사진 업로드
+    private fun uploadImgToServer() {
+        val intent = Intent(this, WordDetailActivity::class.java)
+    //intent.putExtra("data", imageWord)
+    //intent.putExtra("dataKr", imageWordKr)
+    startActivity(intent)
+    } // 서버로 사진 업로드
 }

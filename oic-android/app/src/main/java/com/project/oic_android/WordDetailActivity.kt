@@ -5,6 +5,7 @@ import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.UserDictionary.Words.addWord
+import android.text.TextUtils
 import android.util.Log
 import android.view.View
 import android.widget.Toast
@@ -86,8 +87,19 @@ class WordDetailActivity : AppCompatActivity() {
 
     private fun GetWordData() {
         //datas = intent.getSerializableExtra("data") as Word
-        datas = intent.getStringExtra("data") as String
-        datasKr = intent.getStringExtra("dataKr") as String
+        //datas = "chair"
+        //datasKr = "의자"
+//        datas = intent.getStringExtra("data") as String
+//        datasKr = intent.getStringExtra("dataKr") as String
+
+        if (!TextUtils.isEmpty(intent.getStringExtra("data"))) {
+            datas = intent.getStringExtra("data") as String
+            datasKr = intent.getStringExtra("dataKr") as String
+        }
+        else {
+            datas = "chair"
+            datasKr = "의자"
+        }
         //datas = Word("apple", "사과") // 개발 정 안되면 이걸로 고정시키기
         //Log.e("getData",datas)
         //Log.e("getData", datasKr)
@@ -116,9 +128,26 @@ class WordDetailActivity : AppCompatActivity() {
         //binding.syno.text = "동의어 : " + datas.syno.toString()
         //binding.anto.text = "반의어 : " + datas.anto.toString()
 
-        binding.example.text = "예제"
-        binding.syno.text = "동의어"
-        binding.anto.text = "반의어"
-//
+        //사물인식
+        if(datas=="chair"){
+            binding.example.text = "예제"
+            binding.exampleEx.text = "The height of the bicycle seat is adjustable."
+            binding.syno.text = "동의어"
+            binding.synoEx.text = "stool"
+        }
+        //단어검색
+        if(datas=="succeed"){
+            binding.example.text = "예제"
+            binding.exampleEx.text = "You will succeed to get a job this time. So cheer up"
+            binding.syno.text = "동의어"
+            binding.synoEx.text = "prosper, make it"
+            binding.anto.text = "반의어"
+            binding.antoEx.text = "fail"
+        }
+
+//        binding.example.text = "예제"
+//        binding.syno.text = "동의어"
+//        binding.anto.text = "반의어"
+
     }
 }

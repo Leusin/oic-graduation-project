@@ -93,7 +93,7 @@ class MainActivity : AppCompatActivity() {
                     getData(word)
 
                     Toast.makeText(this@MainActivity,"검색중", Toast.LENGTH_LONG).show()
-
+                    binding.searchView.setQuery("", false)
                     binding.searchView.clearFocus()
                 }
                 return true
@@ -184,7 +184,8 @@ class MainActivity : AppCompatActivity() {
 //                        ))
                         Log.d("putData", input_word)
                         intent.putExtra("data", input_word)
-                        val translate = TranslateTask(input_word)
+//                        val translate = TranslateTask(input_word)
+                        val translate = "성공하다"
                         intent.putExtra("dataKr", translate)    // 번역이 안됨 (TranslateTask 함수 작동 x)
                         startActivity(intent)
 
