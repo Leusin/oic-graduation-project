@@ -1,2 +1,0 @@
-ninja: Entering directory `C:\OIC\final\oic-android\sdk\.cxx\Debug\1f29495n\arm64-v8a'
-ninja: no work to do.

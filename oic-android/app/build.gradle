@@ -65,8 +65,10 @@ dependencies {
     implementation 'androidx.navigation:navigation-fragment-ktx:2.5.0'
     implementation 'androidx.navigation:navigation-ui-ktx:2.5.0'
     implementation 'androidx.annotation:annotation:1.4.0'
-    implementation project(path: ':sdk')
+    //implementation project(path: ':sdk')
     implementation 'com.google.firebase:firebase-database-ktx:20.1.0'
+    implementation project(path: ':opencv3')
+//    implementation project(path: ':opencv')
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
@@ -116,4 +118,13 @@ dependencies {
 
     // Splashscreen
     implementation 'androidx.core:core-splashscreen:1.0.0'
+
+    // 사물인식
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation project(path: ':opencv3')
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso-core:3.3.0'
 }

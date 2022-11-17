@@ -15,3 +15,6 @@ dependencyResolutionManagement {
 rootProject.name = "OIC-android"
 include ':app'
 include ':sdk'
+include ':java'
+include ':opencv'
+include ':opencv3'

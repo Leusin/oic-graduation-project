@@ -134,6 +134,21 @@ class WordDetailActivity : AppCompatActivity() {
             binding.exampleEx.text = "The height of the bicycle seat is adjustable."
             binding.syno.text = "동의어"
             binding.synoEx.text = "stool"
+        }else if(datas=="laptop"){
+            binding.wordinfoKr.text = "노트북"
+            binding.example.text = "예제"
+            binding.exampleEx.text = "I left my laptop on the bus here."
+            binding.syno.text = "동의어"
+            binding.synoEx.text = "desktop computer"
+        }
+        else if(datas=="vase"){
+            binding.example.text = "예제"
+            binding.exampleEx.text = "a vase of flowers"
+            binding.syno.text = ""
+            binding.synoEx.text = ""
+            binding.anto.text = ""
+            binding.antoEx.text  = ""
+            binding.wordinfoKr.text = "꽃병"
         }
         //단어검색
         if(datas=="succeed"){
@@ -143,6 +158,22 @@ class WordDetailActivity : AppCompatActivity() {
             binding.synoEx.text = "prosper, make it"
             binding.anto.text = "반의어"
             binding.antoEx.text = "fail"
+        }else if(datas=="graduate"){
+            binding.example.text = "예제"
+            binding.exampleEx.text = "Martha graduated from university two years ago."
+            binding.syno.text = "동의어"
+            binding.synoEx.text = "mark off, proportion"
+            binding.anto.text = "반의어"
+            binding.antoEx.text = "regress, be demoted"
+            binding.wordinfoKr.text = "졸업하다"
+        }else if(datas=="explain"){
+            binding.example.text = "예제"
+            binding.exampleEx.text = "I'll explain the rules of the game."
+            binding.syno.text = "동의어"
+            binding.synoEx.text = "describe, teach"
+            binding.anto.text = ""
+            binding.antoEx.text = ""
+            binding.wordinfoKr.text = "설명하다"
         }
 
 //        binding.example.text = "예제"

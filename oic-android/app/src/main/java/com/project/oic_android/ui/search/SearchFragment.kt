@@ -153,7 +153,7 @@ class SearchFragment : Fragment() {
                     savedUri = Uri.fromFile(photoFile)
 
                     val msg = "사진이 저장되었습니다: $savedUri"
-                    Toast.makeText(safeContext, msg, Toast.LENGTH_SHORT).show()
+                    //Toast.makeText(safeContext, msg, Toast.LENGTH_SHORT).show()
                     Log.d(TAG, msg)
 
                     val animation = AnimationUtils.loadAnimation(activity, R.anim.camera_shutter)

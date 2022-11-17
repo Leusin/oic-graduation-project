@@ -50,9 +50,12 @@ class ImageViewActivity : AppCompatActivity() {
 
 //    private fun uploadImgToServer() { } // 서버로 사진 업로드
     private fun uploadImgToServer() {
+
         val intent = Intent(this, WordDetailActivity::class.java)
     //intent.putExtra("data", imageWord)
     //intent.putExtra("dataKr", imageWordKr)
     startActivity(intent)
     } // 서버로 사진 업로드
+
+
 }
