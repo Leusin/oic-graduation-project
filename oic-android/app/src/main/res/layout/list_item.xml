@@ -28,7 +28,7 @@
     -->
     <TextView
         android:id="@+id/word_en"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:gravity="center"
         android:layout_marginLeft="30dp"
@@ -59,7 +59,7 @@ android:layout_width="0dp"
     <TextView
         android:id="@+id/word_kr"
         android:visibility="invisible"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:gravity="center"
         android:lines="1"
