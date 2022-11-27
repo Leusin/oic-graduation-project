@@ -31,9 +31,9 @@ import java.util.*
 
 class ImageViewActivity : AppCompatActivity() {
 
-    var tinyYolo: Net? = null
+//    var tinyYolo: Net? = null
 
-//    companion object { private const val TAG = "ImageViewActivity" }
+    companion object { private const val TAG = "ImageViewActivity" }
 
     private lateinit var binding: ActivityImageViewBinding
     private var currentImageURL: Uri? = null
@@ -50,7 +50,7 @@ class ImageViewActivity : AppCompatActivity() {
     private fun setListener() {
         binding.backIcon.setOnClickListener { finish() }
 //        binding.imageSearchButton.setOnClickListener{ uploadImgToServer() }
-        binding.imageSearchButton.setOnClickListener{ DetectObject() }
+        binding.imageSearchButton.setOnClickListener{ uploadImgToServer() }
     }
 
     private fun getImageURL() {
@@ -58,8 +58,12 @@ class ImageViewActivity : AppCompatActivity() {
         binding.imageViewPreview.setImageURI(currentImageURL)
     }
 
+    private fun uploadImgToServer() {
+        val intent = Intent(this, WordDetailActivity::class.java)
+        startActivity(intent)
+    }
 //    private fun uploadImgToServer() { } // 서버로 사진 업로드
-    private fun DetectObject() {
+/*    private fun DetectObject() {
         currentImageURL
         val tinyYoloCfg = getPath("yolov3-tiny.cfg", this) //핸드폰내 외부 저장소 경로
         val tinyYoloWeights = getPath("yolov3-tiny.weights", this)
@@ -271,5 +275,5 @@ class ImageViewActivity : AppCompatActivity() {
             return ""
         }
     }
-
+*/
 }
