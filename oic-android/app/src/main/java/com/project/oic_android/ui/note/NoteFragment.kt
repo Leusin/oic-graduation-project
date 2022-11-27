@@ -118,6 +118,7 @@ class NoteFragment : Fragment() {
 //        adapter.items.add(Word("chair", "의자"))
 
         binding.recyclerView.adapter = adapter
+        binding.switch1.isChecked = false
 
         databaseRef =
             FirebaseDatabase.getInstance("https://oicproject-fda8d-default-rtdb.firebaseio.com/").reference
