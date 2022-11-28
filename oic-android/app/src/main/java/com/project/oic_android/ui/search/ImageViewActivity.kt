@@ -21,6 +21,7 @@ import com.project.oic_android.ui.ArFragment
 import okhttp3.MediaType
 import org.opencv.android.CameraBridgeViewBase
 import org.opencv.android.CameraBridgeViewBase.CvCameraViewListener2
+import org.opencv.android.Utils
 import org.opencv.core.*
 import org.opencv.dnn.Dnn
 import org.opencv.dnn.Net
@@ -31,7 +32,7 @@ import java.util.*
 
 class ImageViewActivity : AppCompatActivity() {
 
-//    var tinyYolo: Net? = null
+    //var tinyYolo: Net? = null
 
     companion object { private const val TAG = "ImageViewActivity" }
 
@@ -49,8 +50,8 @@ class ImageViewActivity : AppCompatActivity() {
 
     private fun setListener() {
         binding.backIcon.setOnClickListener { finish() }
-//        binding.imageSearchButton.setOnClickListener{ uploadImgToServer() }
         binding.imageSearchButton.setOnClickListener{ uploadImgToServer() }
+//        binding.imageSearchButton.setOnClickListener{ DetectObject() }
     }
 
     private fun getImageURL() {
@@ -60,10 +61,12 @@ class ImageViewActivity : AppCompatActivity() {
 
     private fun uploadImgToServer() {
         val intent = Intent(this, WordDetailActivity::class.java)
+        intent.putExtra("data2", "chair")
+        intent.putExtra("dataKr2", "의자")
         startActivity(intent)
     }
-//    private fun uploadImgToServer() { } // 서버로 사진 업로드
-/*    private fun DetectObject() {
+/*
+    private fun DetectObject() {
         currentImageURL
         val tinyYoloCfg = getPath("yolov3-tiny.cfg", this) //핸드폰내 외부 저장소 경로
         val tinyYoloWeights = getPath("yolov3-tiny.weights", this)
@@ -80,8 +83,11 @@ class ImageViewActivity : AppCompatActivity() {
         //Mat을 활용하여 이미지를 파이썬의 매트릭스 배열처럼 저장할 수 있다
         val frame = inputFrame.rgba() //프레임 받기
         val frame2 = getPath(currentImageURL.toString(), this)
+        val img: Bitmap
+        Utils.bitmapToMat(img, currentImageURL)
         //Imgproc을 이용해 이미지 프로세싱을 한다.
-        Imgproc.cvtColor(frame, frame, Imgproc.COLOR_RGBA2RGB) //rgba 체계를 rgb로 변경
+//        Imgproc.cvtColor(frame, frame, Imgproc.COLOR_RGBA2RGB) //rgba 체계를 rgb로 변경
+        Imgproc.cvtColor(frame2, frame2, Imgproc.COLOR_RGBA2RGB) //rgba 체계를 rgb로 변경
         //Imgproc.Canny(frame, frame, 100, 200);
         //Mat gray=Imgproc.cvtColor(frame, frame, Imgproc.COLOR_BGR2GRAY)
         val imageBlob = Dnn.blobFromImage(
@@ -155,86 +161,20 @@ class ImageViewActivity : AppCompatActivity() {
                 val idGuy = clsIds[idx]
                 val conf = confs[idx]
                 val cocoNames = Arrays.asList(
-                    "a person",
-                    "a bicycle",
-                    "a motorbike",
-                    "an airplane",
-                    "a bus",
-                    "a train",
-                    "a truck",
-                    "a boat",
-                    "a traffic light",
-                    "a fire hydrant",
-                    "a stop sign",
-                    "a parking meter",
-                    "a car",
-                    "a bench",
-                    "a bird",
-                    "a cat",
-                    "a dog",
-                    "a horse",
-                    "a sheep",
-                    "a cow",
-                    "an elephant",
-                    "a bear",
-                    "a zebra",
-                    "a giraffe",
-                    "a backpack",
-                    "an umbrella",
-                    "a handbag",
-                    "a tie",
-                    "a suitcase",
-                    "a frisbee",
-                    "skis",
-                    "a snowboard",
-                    "a sports ball",
-                    "a kite",
-                    "a baseball bat",
-                    "a baseball glove",
-                    "a skateboard",
-                    "a surfboard",
-                    "a tennis racket",
-                    "a bottle",
-                    "a wine glass",
-                    "a cup",
-                    "a fork",
-                    "a knife",
-                    "a spoon",
-                    "a bowl",
-                    "a banana",
-                    "an apple",
-                    "a sandwich",
-                    "an orange",
-                    "broccoli",
-                    "a carrot",
-                    "a hot dog",
-                    "a pizza",
-                    "a doughnut",
-                    "a cake",
-                    "a chair",
-                    "a sofa",
-                    "a potted plant",
-                    "a bed",
-                    "a dining table",
-                    "a toilet",
-                    "a TV monitor",
-                    "a laptop",
-                    "a computer mouse",
-                    "a remote control",
-                    "a keyboard",
-                    "a cell phone",
-                    "a microwave",
-                    "an oven",
-                    "a toaster",
-                    "a sink",
-                    "a refrigerator",
-                    "a book",
-                    "a clock",
-                    "a vase",
-                    "a pair of scissors",
-                    "a teddy bear",
-                    "a hair drier",
-                    "a toothbrush"
+                    "a person", "a bicycle", "a motorbike", "an airplane", "a bus", "a train",
+                    "a truck", "a boat", "a traffic light", "a fire hydrant", "a stop sign",
+                    "a parking meter", "a car", "a bench", "a bird", "a cat", "a dog", "a horse", "a sheep",
+                    "a cow", "an elephant", "a bear", "a zebra", "a giraffe", "a backpack", "an umbrella",
+                    "a handbag", "a tie", "a suitcase", "a frisbee", "skis", "a snowboard",
+                    "a sports ball", "a kite", "a baseball bat", "a baseball glove", "a skateboard",
+                    "a surfboard", "a tennis racket", "a bottle", "a wine glass", "a cup",
+                    "a fork", "a knife", "a spoon", "a bowl", "a banana", "an apple", "a sandwich",
+                    "an orange", "broccoli", "a carrot", "a hot dog", "a pizza", "a doughnut",
+                    "a cake", "a chair", "a sofa", "a potted plant", "a bed", "a dining table",
+                    "a toilet", "a TV monitor", "a laptop", "a computer mouse", "a remote control",
+                    "a keyboard", "a cell phone", "a microwave", "an oven", "a toaster",
+                    "a sink", "a refrigerator", "a book", "a clock", "a vase", "a pair of scissors",
+                    "a teddy bear", "a hair drier", "a toothbrush"
                 )
                 //
                 // List<String> cocoNames = Arrays.asList("sign");

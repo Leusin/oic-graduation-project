@@ -96,13 +96,16 @@ class WordDetailActivity : AppCompatActivity() {
             datas = intent.getStringExtra("data") as String
             datasKr = intent.getStringExtra("dataKr") as String
         }
-        else {
-            datas = "chair"
-            datasKr = "의자"
+        else if (!TextUtils.isEmpty(intent.getStringExtra("data2"))) {
+            datas = intent.getStringExtra("data2") as String
+            datasKr = intent.getStringExtra("dataKr2") as String
         }
-        //datas = Word("apple", "사과") // 개발 정 안되면 이걸로 고정시키기
-        //Log.e("getData",datas)
-        //Log.e("getData", datasKr)
+        else {
+            datas = intent.getStringExtra("data1") as String
+            datasKr = intent.getStringExtra("dataKr1") as String
+            //datas = "chair"
+            //datasKr = "의자"
+        }
 
         //Glide.with(this).load(datas.img).into(binding.imageView)
         binding.wordinfoEn.text = datas

@@ -11,6 +11,7 @@ import android.widget.ImageView
 import android.widget.Switch
 import android.widget.TextView
 import android.widget.Toast
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.list_item.view.*
 import com.bumptech.glide.Glide
@@ -108,12 +109,12 @@ class ItemAdapter: RecyclerView.Adapter<ItemAdapter.ViewHolder>() {
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         init {
             itemView.setOnClickListener {
-                //val context = itemView.getContext()
-                Toast.makeText(itemView?.context, "클릭 = ${itemView.word_en.text}", Toast.LENGTH_SHORT).show()
-                //val intent = Intent(context, WordDetailActivity::class.java)
-                //intent.putExtra("data", "${itemView.word_en.text}")
-                //context.startActivity(intent)
-                }
+//                Toast.makeText(itemView?.context, "클릭 = ${itemView.word_en.text}", Toast.LENGTH_SHORT).show()
+                val intent = Intent(itemView?.context, WordDetailActivity::class.java)
+                intent.putExtra("data1", "${itemView.word_en.text}")
+                intent.putExtra("dataKr1", "${itemView.word_kr.text}")
+                itemView?.context!!.startActivity(intent)
+            }
         }
 
         fun setItem(item: Word) {

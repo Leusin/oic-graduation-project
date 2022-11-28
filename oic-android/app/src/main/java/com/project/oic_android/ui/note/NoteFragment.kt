@@ -92,11 +92,15 @@ class NoteFragment : Fragment() {
         val root: View = binding.root
         adapter = ItemAdapter()
 
+        binding.switch1.isChecked = false
+
         return root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        binding.switch1.isChecked = false
 
         initRecyclerView()
 
@@ -118,6 +122,7 @@ class NoteFragment : Fragment() {
 //        adapter.items.add(Word("chair", "의자"))
 
         binding.recyclerView.adapter = adapter
+
         binding.switch1.isChecked = false
 
         databaseRef =
@@ -133,6 +138,7 @@ class NoteFragment : Fragment() {
                     Log.e("test", "loadItem:onCancelled : ${error.toException()}")
                 }
         })
+
     }
 
     fun loadCommentList(dataSnapshot: DataSnapshot) {
@@ -152,7 +158,6 @@ class NoteFragment : Fragment() {
             adapter.notifyDataSetChanged()
         }
     }
-
 
     private fun switchButtonEvent(){
         binding.switch1.isChecked = false

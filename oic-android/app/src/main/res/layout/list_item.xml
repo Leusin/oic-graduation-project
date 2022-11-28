@@ -28,13 +28,13 @@
     -->
     <TextView
         android:id="@+id/word_en"
-        android:layout_width="wrap_content"
+        android:layout_width="170dp"
         android:layout_height="match_parent"
         android:gravity="center"
         android:layout_marginLeft="30dp"
         android:lines="1"
         android:paddingStart="5dp"
-        android:paddingEnd="5dp"
+        android:paddingEnd="30dp"
         android:text="@{item.word}"
         android:textColor="@color/black"
         android:textSize="30dp"
@@ -58,19 +58,19 @@ android:layout_width="0dp"
     <!--        android:text="@{item.mean}"-->
     <TextView
         android:id="@+id/word_kr"
-        android:visibility="invisible"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="match_parent"
+        android:fontFamily="@font/kotra"
         android:gravity="center"
         android:lines="1"
-        android:layout_marginLeft="30dp"
-        android:paddingStart="50dp"
         android:paddingEnd="5dp"
+        android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="30dp"
-        android:textAlignment="center"
-        android:fontFamily="@font/kotra"
-        app:layout_constraintHorizontal_bias=".0"
-        app:layout_constraintStart_toEndOf="@id/word_en" />
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/word_en"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
